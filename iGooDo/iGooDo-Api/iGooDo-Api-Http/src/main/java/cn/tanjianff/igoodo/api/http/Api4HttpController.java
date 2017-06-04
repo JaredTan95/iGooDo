@@ -19,23 +19,37 @@ import java.net.URISyntaxException;
 import java.net.URLEncoder;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
+
 /**
  * Created by tanjian on 2017/6/3.
+ * Http Api
  */
 @ComponentScan
 @Controller
 @RequestMapping(value = "/api/v1",produces="text/html;charset=UTF-8")
 public class Api4HttpController {
+    /**
+     * Gets chap.
+     *
+     * @param request  the request
+     * @param response the response
+     * @throws ServletException the servlet exception
+     * @throws IOException      the io exception
+     */
     @RequestMapping(value = "/captcha",method = GET)
     public void getChap(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         CaptchaUtil.outputCaptcha(request, response);
     }
 
+
     /**
      * 使用JDK发送单条短信,智能匹配短信模板
-     * * @param mobile 接收的手机号,仅支持单号码发送
-     * * @param type  短信业务类型--{"reg","login","gback"}
-     * * @return json格式字符串
+     *
+     * @param phoneNum 接收的手机号,仅支持单号码发送
+     * @param type     短信业务类型--{"reg","login","gback"}
+     * @return json 消息状态
+     * @throws IOException        the io exception
+     * @throws URISyntaxException the uri syntax exception
      */
     @RequestMapping(value = "/code/{phoneNum}/{type}", method = GET)
     @ResponseBody
@@ -58,6 +72,14 @@ public class Api4HttpController {
         }
     }
 
+    /**
+     * 获取 QRCode-验证码,通过Http response返回二维码.
+     *
+     * @param response Http 响应实例
+     * @param data     需要转换成QRCode的消息
+     * @param width    QRCode二维码图片宽度
+     * @param height   QRCode二维码图片高度
+     */
     @RequestMapping(value = "/QRCode/{data}/{width}/{height}",method = GET)
     public void getQRCode(HttpServletResponse response,@PathVariable("data")String data,@PathVariable("width") Integer width,@PathVariable("height") Integer height ){
         try{

@@ -1,5 +1,6 @@
 package cn.tanjianff.igoodo.config;
 
+import com.fasterxml.jackson.core.JsonEncoding;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -30,7 +31,7 @@ public class WebConfig  extends WebMvcConfigurerAdapter {
     @Bean
     public ViewResolver viewResolver() {
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-        resolver.setPrefix("");
+        resolver.setPrefix("/");
         resolver.setSuffix(".jsp");
         resolver.setExposeContextBeansAsAttributes(true);
         return resolver;
@@ -48,12 +49,12 @@ public class WebConfig  extends WebMvcConfigurerAdapter {
 
     /*配置C3P0数据库连接池*/
     @Bean
-    public ComboPooledDataSource dataSource() throws PropertyVetoException {
+    public ComboPooledDataSource dataSource() throws PropertyVetoException, IOException {
         ComboPooledDataSource ds = new ComboPooledDataSource();
         ds.setDriverClass("com.mysql.jdbc.Driver");
-        ds.setJdbcUrl("jdbc:mysql://115.159.216.56:3306/TGAdmin");
+        ds.setJdbcUrl("jdbc:mysql://111.230.128.214:3306/iGooDo");
         ds.setUser("dev");
-        ds.setPassword("123456");
+        ds.setPassword("dev123456");
         ds.setInitialPoolSize(5);
         ds.setMaxPoolSize(10);
         ds.setMinPoolSize(3);
@@ -94,11 +95,13 @@ public class WebConfig  extends WebMvcConfigurerAdapter {
         return multipartResolver;
     }
 
+
     /*Json 化*/
     @Bean
     public MappingJackson2JsonView mappingJackson2JsonView() {
         MappingJackson2JsonView mappingJackson2JsonView = new MappingJackson2JsonView();
         mappingJackson2JsonView.setContentType("application/json");
+        mappingJackson2JsonView.setEncoding(JsonEncoding.UTF8);
         return mappingJackson2JsonView;
     }
 }
