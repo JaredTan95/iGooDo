@@ -33,12 +33,12 @@ public final class CaptchaUtil
     private static Random random = new Random();
     
     /*
-     * 获取6位随机数
+     * 获取4位随机数
      */
     private static String getRandomString()
     {
         StringBuffer buffer = new StringBuffer();
-        for(int i = 0; i < 5; i++)
+        for(int i = 0; i <4; i++)
         {
             buffer.append(CHARS[random.nextInt(CHARS.length)]);
         }
@@ -50,8 +50,9 @@ public final class CaptchaUtil
      */
     private static Color getRandomColor()
     {
-        return new Color(random.nextInt(255),random.nextInt(255),
-                random.nextInt(255));
+       /* return new Color(random.nextInt(255),random.nextInt(255),
+                random.nextInt(255));*/
+        return new Color(255,255, 255);//给定白色背景色
     }
     
     /*
@@ -63,14 +64,17 @@ public final class CaptchaUtil
                 255 - c.getBlue());
     }
     
-    public static void outputCaptcha(HttpServletRequest request, HttpServletResponse response)
+    public static void outputCaptcha(HttpServletRequest request, HttpServletResponse response,StringBuffer codeNum)
             throws ServletException, IOException 
     {
 
         response.setContentType("image/jpeg");
 
         String randomString = getRandomString();
-        request.getSession(true).setAttribute("randomString", randomString);
+
+        codeNum.append(randomString);//将生成的验证码数字传递出去
+
+        //request.getSession(true).setAttribute("randomString", randomString);//如果需要在服务器上进行验证，则取消注释；而我们采用客户端验证;
 
         int width = 120;
         int height = 40;
@@ -90,6 +94,8 @@ public final class CaptchaUtil
         {
             g.drawRect(random.nextInt(width), random.nextInt(height), 1, 1);
         }
+
+        response.addHeader("ValiCode",randomString);//直接将生成的随机数通过response响应的头部传送出去
 
         // 转成JPEG格式
         ServletOutputStream out = null;

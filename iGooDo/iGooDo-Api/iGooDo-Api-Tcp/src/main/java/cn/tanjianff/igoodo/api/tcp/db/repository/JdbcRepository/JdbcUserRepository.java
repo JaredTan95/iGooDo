@@ -1,9 +1,10 @@
-package cn.tanjianff.igoodo.db.repository.JdbcRepository;
+package cn.tanjianff.igoodo.api.tcp.db.repository.JdbcRepository;
 
-import cn.tanjianff.igoodo.db.domain.IgdUser;
-import cn.tanjianff.igoodo.db.repository.UserRepository;
+import cn.tanjianff.igoodo.api.tcp.db.domain.IgdUser;
+import cn.tanjianff.igoodo.api.tcp.db.repository.UserRepository;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Service;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,15 +15,16 @@ import java.util.Map;
  * Created by tanjian on 2017/6/4.
  * 基于JdbcTemplate实现用户基础信息数据库仓库接口
  */
+@Service("jdbcUserRepository")
 public class JdbcUserRepository implements UserRepository {
-    private static final String SAVE="INSERT INTO iGooDo.IGD_USER (USER_phone, IGD_USER_phone, USER_pwd," +
+    private static final String SAVE="INSERT INTO iGooDo.IGD_USER (USER_phone, USER_pwd," +
             " USER_sex, USER_nickname, USER_regdate, USER_icon, USER_alipay_account, USER_credit," +
             " USER_reserved_field_01, USER_reserved_field_02, USER_reserved_field_03, update_time) " +
-            "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            "VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
     private static final String UPDATE_USER="UPDATE IGD_USER SET USER_pwd=?, USER_sex=?,USER_nickname=?," +
             " USER_regdate=?, USER_icon=? USER_alipay_account=?, USER_credit=?"+
             "WHERE IGD_USER.USER_phone=?";
-    private static final String SELECT_BASE_USER="SELECT USER_phone, IGD_USER_phone, USER_pwd, USER_sex," +
+    private static final String SELECT_BASE_USER="SELECT USER_phone, USER_pwd, USER_sex," +
             "USER_nickname, USER_regdate, USER_icon, USER_alipay_account, USER_credit, " +
             "USER_reserved_field_01, USER_reserved_field_02, USER_reserved_field_03, " +
             "update_time FROM IGD_USER WHERE USER_phone=?";
@@ -34,11 +36,10 @@ public class JdbcUserRepository implements UserRepository {
 
     @Override
     public IgdUser save(IgdUser user) {
-        return jdbcTemplate.update(SAVE,user.getUser_phone(),user.getIgd_user_phone(),user.getUser_pwd()
-                            ,user.getUser_sex(),user.getUser_nickname(),user.getUser_regdate()
-                            ,user.getUser_icon(),user.getUser_alipay_account(),user.getUser_credit()
-                            ,user.getUser_reserved_field_01(),user.getUser_reserved_field_02()
-                            ,user.getUser_reserved_field_03(),user.getUser_update_time())>0?user:new IgdUser();
+        return jdbcTemplate.update(SAVE,user.getUser_phone(),user.getUser_phone(),user.getUser_pwd()
+                ,user.getUser_sex(),user.getUser_nickname(),user.getUser_regdate(),user.getUser_icon()
+                ,user.getUser_alipay_account(),user.getUser_reserved_field_01(),user.getUser_reserved_field_02()
+                ,user.getUser_reserved_field_03())>0?user:new IgdUser();
     }
 
     @Override
@@ -65,7 +66,6 @@ public class JdbcUserRepository implements UserRepository {
         @Override
         public IgdUser mapRow(ResultSet resultSet, int i) throws SQLException {
             return new IgdUser(resultSet.getDouble("USER_phone"),
-                                resultSet.getDouble("IGD_USER_phone"),
                                 resultSet.getString("USER_pwd"),
                                 resultSet.getLong("USER_sex"),
                                 resultSet.getString("USER_nickname"),

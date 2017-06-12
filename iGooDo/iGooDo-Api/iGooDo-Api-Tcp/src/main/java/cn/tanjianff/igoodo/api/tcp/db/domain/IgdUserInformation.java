@@ -1,4 +1,4 @@
-package cn.tanjianff.igoodo.db.domain;
+package cn.tanjianff.igoodo.api.tcp.db.domain;
 
 
 import java.sql.Date;
@@ -7,7 +7,7 @@ import java.sql.Timestamp;
 public class IgdUserInformation {
 
     private double userPhone;
-    private java.sql.Date infBirthday;
+    private Date infBirthday;
     private long infWeightKg;
     private long infHeightCm;
     private String infReservedField01;
@@ -18,7 +18,7 @@ public class IgdUserInformation {
     private String infReservedField06;
     private String infReservedField07;
     private String infReservedField08;
-    private java.sql.Timestamp infUpdateTime;
+    private Timestamp updateTime;
 
     public IgdUserInformation() {
     }
@@ -39,7 +39,7 @@ public class IgdUserInformation {
         this.infReservedField06 = infReservedField06;
         this.infReservedField07 = infReservedField07;
         this.infReservedField08 = infReservedField08;
-        this.infUpdateTime = infUpdateTime;
+        this.updateTime = infUpdateTime;
     }
 
     public double getUserPhone() {
@@ -51,11 +51,11 @@ public class IgdUserInformation {
     }
 
 
-    public java.sql.Date getInfBirthday() {
+    public Date getInfBirthday() {
         return infBirthday;
     }
 
-    public void setInfBirthday(java.sql.Date infBirthday) {
+    public void setInfBirthday(Date infBirthday) {
         this.infBirthday = infBirthday;
     }
 
@@ -149,13 +149,12 @@ public class IgdUserInformation {
         this.infReservedField08 = infReservedField08;
     }
 
-
-    public java.sql.Timestamp getInfUpdateTime() {
-        return infUpdateTime;
+    public Timestamp getUpdateTime() {
+        return updateTime;
     }
 
-    public void setInfUpdateTime(java.sql.Timestamp infUpdateTime) {
-        this.infUpdateTime = infUpdateTime;
+    public void setUpdateTime(Timestamp updateTime) {
+        this.updateTime = updateTime;
     }
 
     @Override
@@ -173,7 +172,7 @@ public class IgdUserInformation {
                 ", infReservedField06='" + infReservedField06 + '\'' +
                 ", infReservedField07='" + infReservedField07 + '\'' +
                 ", infReservedField08='" + infReservedField08 + '\'' +
-                ", infUpdateTime=" + infUpdateTime +
+                ", infUpdateTime=" + updateTime +
                 '}';
     }
 }

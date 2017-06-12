@@ -14,7 +14,7 @@
       <module name="iGooDo" target="1.8" />
       <module name="iGooDo-Api" target="1.8" />
       <module name="iGooDo-Api-Http" target="1.8" />
-      <module name="iGooDo-Api-Tcp" target="1.8" />
+      <module name="iGooDo-Api-Tcp" target="1.7" />
       <module name="iGooDo-Core" target="1.8" />
     </bytecodeTargetLevel>
   </component>

@@ -1,6 +1,7 @@
-package cn.tanjianff.igoodo.db.repository;
+package cn.tanjianff.igoodo.api.tcp.db.repository;
 
-import cn.tanjianff.igoodo.db.domain.IgdUser;
+
+import cn.tanjianff.igoodo.api.tcp.db.domain.IgdUser;
 
 import java.util.Map;
 

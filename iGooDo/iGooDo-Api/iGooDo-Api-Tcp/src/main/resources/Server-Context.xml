@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd" >
+
+    <context:annotation-config/>
+    <context:component-scan base-package="cn.tanjianff.igoodo.api" />
+
+    <!-- 传统方法配置BEAN
+    <bean id="helloServer" class="com.netty.HelloServer" init-method="serverStart">
+    <property name="helloServerInitializer" ref="helloServerInitializer"></property>
+    </bean>
+
+    <bean id="helloServerInitializer" class="com.netty.HelloServerInitializer">
+    <property name="helloServerHandler" ref="helloServerHandler"></property>
+    </bean>
+
+    <bean id="helloServerHandler" class="com.netty.HelloServerHandler" scope="prototype"></bean>
+     -->
+    <bean id="dataSource"   class="com.mchange.v2.c3p0.ComboPooledDataSource"
+          destroy-method="close">
+        <property name="driverClass" value="com.mysql.jdbc.Driver" />
+        <property name="jdbcUrl" value="jdbc:mysql://111.230.128.214:3306/iGooDo" />
+        <property name="user" value="dev" />
+        <property name="password" value="dev123456" />
+
+        <!--配置连接池初始值 -->
+        <property name="initialPoolSize" value="5"/>
+        <!--当最少空闲连接时，连接数小于该值，就会自动申请一些连接 -->
+        <property name="minPoolSize" value="3"/>
+        <property name="maxIdleTime" value="600"/>
+        <property name="maxPoolSize" value="10"/>
+    </bean>
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <constructor-arg ref="dataSource"/>
+    </bean>
+
+    <bean id="jdbcUserRepository" class="cn.tanjianff.igoodo.api.tcp.db.repository.JdbcRepository.JdbcUserRepository">
+        <constructor-arg ref="jdbcTemplate"/>
+    </bean>
+</beans>

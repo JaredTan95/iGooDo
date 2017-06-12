@@ -31,14 +31,17 @@ public class Api4HttpController {
     /**
      * Gets chap.
      *
-     * @param request  the request
-     * @param response the response
+     * @param request  Http请求
+     * @param response Htpp响应
+     * @return ValiCode 在Response 头部中添加ValiCode属性，其value为生成的验证码随机数
      * @throws ServletException the servlet exception
      * @throws IOException      the io exception
      */
     @RequestMapping(value = "/captcha",method = GET)
     public void getChap(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        CaptchaUtil.outputCaptcha(request, response);
+        StringBuffer stringBuffer=new StringBuffer();
+        CaptchaUtil.outputCaptcha(request, response,stringBuffer);
+        System.out.println(stringBuffer.toString());
     }
 
 
