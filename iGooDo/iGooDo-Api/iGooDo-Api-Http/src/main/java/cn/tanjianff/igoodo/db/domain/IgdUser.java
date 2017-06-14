@@ -7,28 +7,25 @@ import java.sql.Timestamp;
 public class IgdUser implements Serializable{
   private static final long serialVersionUID = 7247714666080613254L;
   private Double user_phone;
-  private Double igd_user_phone;
   private String user_pwd;
   private Long user_sex;
   private String user_nickname;
-  private java.sql.Date user_regdate;
+  private Date user_regdate;
   private String user_icon;
   private String user_alipay_account;
   private Long user_credit;
   private String user_reserved_field_01;
   private String user_reserved_field_02;
   private String user_reserved_field_03;
-  private java.sql.Timestamp user_update_time;
+  private Timestamp update_time;
 
   public IgdUser() {
   }
 
-  public IgdUser(Double user_phone, Double igd_user_phone, String user_pwd, Long user_sex, String user_nickname,
-                 Date user_regdate, String user_icon, String user_alipay_account, Long user_credit,
-                 String user_reserved_field_01, String user_reserved_field_02, String user_reserved_field_03,
-                 Timestamp user_update_time) {
+  public IgdUser(Double user_phone, String user_pwd, Long user_sex, String user_nickname, Date user_regdate,
+                 String user_icon, String user_alipay_account, Long user_credit, String user_reserved_field_01,
+                 String user_reserved_field_02, String user_reserved_field_03, Timestamp update_time) {
     this.user_phone = user_phone;
-    this.igd_user_phone = igd_user_phone;
     this.user_pwd = user_pwd;
     this.user_sex = user_sex;
     this.user_nickname = user_nickname;
@@ -39,7 +36,7 @@ public class IgdUser implements Serializable{
     this.user_reserved_field_01 = user_reserved_field_01;
     this.user_reserved_field_02 = user_reserved_field_02;
     this.user_reserved_field_03 = user_reserved_field_03;
-    this.user_update_time = user_update_time;
+    this.update_time = update_time;
   }
 
   public Double getUser_phone() {
@@ -48,14 +45,6 @@ public class IgdUser implements Serializable{
 
   public void setUser_phone(Double user_phone) {
     this.user_phone = user_phone;
-  }
-
-  public Double getIgd_user_phone() {
-    return igd_user_phone;
-  }
-
-  public void setIgd_user_phone(Double igd_user_phone) {
-    this.igd_user_phone = igd_user_phone;
   }
 
   public String getUser_pwd() {
@@ -82,11 +71,11 @@ public class IgdUser implements Serializable{
     this.user_nickname = user_nickname;
   }
 
-  public java.sql.Date getUser_regdate() {
+  public Date getUser_regdate() {
     return user_regdate;
   }
 
-  public void setUser_regdate(java.sql.Date user_regdate) {
+  public void setUser_regdate(Date user_regdate) {
     this.user_regdate = user_regdate;
   }
 
@@ -138,19 +127,22 @@ public class IgdUser implements Serializable{
     this.user_reserved_field_03 = user_reserved_field_03;
   }
 
-  public java.sql.Timestamp getUser_update_time() {
-    return user_update_time;
+  public static long getSerialVersionUID() {
+    return serialVersionUID;
   }
 
-  public void setUser_update_time(java.sql.Timestamp user_update_time) {
-    this.user_update_time = user_update_time;
+  public Timestamp getUpdate_time() {
+    return update_time;
+  }
+
+  public void setUpdate_time(Timestamp update_time) {
+    this.update_time = update_time;
   }
 
   @Override
   public String toString() {
     return "IgdUser{" +
             "user_phone=" + user_phone +
-            ", igd_user_phone=" + igd_user_phone +
             ", user_pwd='" + user_pwd + '\'' +
             ", user_sex=" + user_sex +
             ", user_nickname='" + user_nickname + '\'' +
@@ -161,7 +153,7 @@ public class IgdUser implements Serializable{
             ", user_reserved_field_01='" + user_reserved_field_01 + '\'' +
             ", user_reserved_field_02='" + user_reserved_field_02 + '\'' +
             ", user_reserved_field_03='" + user_reserved_field_03 + '\'' +
-            ", user_update_time=" + user_update_time +
+            ", update_time=" + update_time +
             '}';
   }
 }

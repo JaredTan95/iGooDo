@@ -4,6 +4,7 @@ import cn.tanjianff.igoodo.db.domain.IgdUserInformation;
 import cn.tanjianff.igoodo.db.repository.UserInfoRepository;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Service;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,6 +12,7 @@ import java.sql.SQLException;
 /**
  * Created by tanjian on 2017/6/5.
  */
+@Service("jdbcUserInfoRepository")
 public class JdbcUserInfoRepository implements UserInfoRepository {
     //TODO:
     private JdbcTemplate jdbcTemplate;
@@ -44,8 +46,10 @@ public class JdbcUserInfoRepository implements UserInfoRepository {
         @Override
         public IgdUserInformation mapRow(ResultSet resultSet, int i) throws SQLException {
             return new IgdUserInformation(resultSet.getDouble("USER_phone")
-                    ,resultSet.getDate("INF_birthday"),resultSet.getLong("SMALLINT")
-                    ,resultSet.getLong("INF_height_cm"),resultSet.getString("INF_reserved_field_01")
+                    ,resultSet.getDate("INF_birthday"),
+                    resultSet.getLong("INF_weight_kg")
+                    ,resultSet.getLong("INF_height_cm"),
+                    resultSet.getString("INF_reserved_field_01")
                     ,resultSet.getString("INF_reserved_field_02")
                     ,resultSet.getString("INF_reserved_field_03")
                     ,resultSet.getString("INF_reserved_field_04")

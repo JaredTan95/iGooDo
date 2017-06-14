@@ -1,5 +1,6 @@
 package cn.tanjianff.igoodo.api.tcp;
 
+import cn.tanjianff.igoodo.api.tcp.util.FormatData;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandler.Sharable;
 import io.netty.channel.ChannelHandlerContext;
@@ -23,6 +24,8 @@ import java.net.SocketAddress;
 public class BootstrapServerHandler extends SimpleChannelInboundHandler<String> {
     public static ChannelGroup channels = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
 
+    private int counter=0;
+
     //TODO:调试使用
     private static String uuid;
     @Autowired
@@ -42,6 +45,7 @@ public class BootstrapServerHandler extends SimpleChannelInboundHandler<String> 
         for (Channel channel : channels) {
             channel.writeAndFlush("[SERVER] - " + incoming.remoteAddress() + " 离开\n");
         }
+        ClientTcpSocketChannelMap.removeSocketChannel(ctx.channel().id().asLongText());//从map中移除该连接通道
         channels.remove(ctx.channel());
     }
     
@@ -56,30 +60,59 @@ public class BootstrapServerHandler extends SimpleChannelInboundHandler<String> 
         Channel incoming=ctx.channel();
         SocketAddress remoteAdress=incoming.remoteAddress();
         // 返回客户端消息 - 我已经接收到了你的消息
-        ctx.writeAndFlush("Received your message !\n"+"Your remoteAdress:"+remoteAdress.toString()+"\nYou send:"+msg);
+        ctx.writeAndFlush("Received:"+msg+"\nYour R:"+remoteAdress.toString()+"\n");
+
+        //调试时是否沾包
+        //  System.out.println("收到消息数:"+(++counter));
         if(msg.equals("print")){
-            ClientTcpSocketChannelMap.getChannels().get(BootstrapServerHandler.uuid).writeAndFlush("\nrecevied from another socketchaneel,your uuid is:"+uuid);
+            ClientTcpSocketChannelMap.getChannels().get(BootstrapServerHandler.uuid).writeAndFlush("\nrecevied from another socketchaneel,your uuid is:"+uuid+"\n");
+        }
+
+        if(msg.equals("PING")){
+            //客户端ping,心跳检测，并返回0000状态状态码,
+            // 代表服务端已经收到客户端发送的心跳检测，并忽视此次放送的消息
+            ctx.writeAndFlush("0000\n");
+        }
+
+        //根据msg长度来初步判断是否是有用的数据请求,如果是，则尝试从客户端发送的信息中提取信息,否则不理会;
+        if(msg.length()>=19){
+            try{
+                ctx.writeAndFlush(new FormatData(msg).toString()+"\n");
+            }catch (Exception e){
+                if(e instanceof NumberFormatException){
+                    //提取消息总长度异常
+                    ctx.writeAndFlush("Data Length(TotalLength) Format error!\n");
+                }
+                if(e instanceof StringIndexOutOfBoundsException){
+                    //提取消息时越界异常
+                    ctx.writeAndFlush("Data Length(OutOfBound) Format error!\n");
+                }
+            }
         }
     }
     
     /*
-     * 
      * 覆盖 channelActive 方法 在channel被启用的时候触发 (在建立连接的时候)
-     * 
-     * channelActive 和 channelInActive 在后面的内容中讲述，这里先不做详细的描述
      * */
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         
-        System.out.println("RamoteAddress : " + ctx.channel().remoteAddress() + " active !");
+        System.out.println("R:" + ctx.channel().remoteAddress() + "Active!");
         
         /*ctx.writeAndFlush( "Welcome to " + InetAddress.getLocalHost().getHostName() + " service!\n");*/
-        ctx.writeAndFlush( "Welcome to iGooDo Tcp service!\n"+"Your remoteAddress : "+ctx.channel().remoteAddress()+"\n");
+        ctx.writeAndFlush( "Welcome to iGooDo Tcp service!\n"+"Your R:"+ctx.channel().remoteAddress()+"\n");
+
+        //TODO:待切换为以连接客户端IP为key---> String key= RegexUtils.getIp(ctx.channel().remoteAddress().toString());
         String uuid=ctx.channel().id().asLongText();
         BootstrapServerHandler.uuid=uuid;
-        System.out.println(uuid);
         ClientTcpSocketChannelMap.addTcpSocketChannel(uuid, (SocketChannel) ctx.channel());
 
         super.channelActive(ctx);
+    }
+
+    @Override
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+       //释放资源
+        ctx.close();
     }
 }

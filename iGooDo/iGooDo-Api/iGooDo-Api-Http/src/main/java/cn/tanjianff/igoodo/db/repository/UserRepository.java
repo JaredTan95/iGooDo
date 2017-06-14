@@ -1,5 +1,6 @@
 package cn.tanjianff.igoodo.db.repository;
 
+
 import cn.tanjianff.igoodo.db.domain.IgdUser;
 
 import java.util.Map;

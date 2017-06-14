@@ -11,12 +11,12 @@ public class IgdWaterDispenser {
     private String wdIp;
     private String wdLat;
     private String wdLon;
-    private java.sql.Date wdPlacedDate;
+    private Date wdPlacedDate;
     private String wdReservedField01;
     private String wdReservedField02;
     private String wdReservedField03;
     private String wdReservedField04;
-    private java.sql.Timestamp wdUpdateTime;
+    private Timestamp updateTime;
 
     public IgdWaterDispenser() {
     }
@@ -35,7 +35,7 @@ public class IgdWaterDispenser {
         this.wdReservedField02 = wdReservedField02;
         this.wdReservedField03 = wdReservedField03;
         this.wdReservedField04 = wdReservedField04;
-        this.wdUpdateTime = wdUpdateTime;
+        this.updateTime = wdUpdateTime;
     }
 
     public String getWdIp() {
@@ -82,11 +82,11 @@ public class IgdWaterDispenser {
     }
 
 
-    public java.sql.Date getWdPlacedDate() {
+    public Date getWdPlacedDate() {
         return wdPlacedDate;
     }
 
-    public void setWdPlacedDate(java.sql.Date wdPlacedDate) {
+    public void setWdPlacedDate(Date wdPlacedDate) {
         this.wdPlacedDate = wdPlacedDate;
     }
 
@@ -126,13 +126,11 @@ public class IgdWaterDispenser {
         this.wdReservedField04 = wdReservedField04;
     }
 
-
-    public java.sql.Timestamp getWdUpdateTime() {
-        return wdUpdateTime;
+    public Timestamp getUpdateTime() {
+        return updateTime;
     }
 
-    public void setWdUpdateTime(java.sql.Timestamp wdUpdateTime) {
-        this.wdUpdateTime = wdUpdateTime;
+    public void setUpdateTime(Timestamp updateTime) {
+        this.updateTime = updateTime;
     }
-
 }

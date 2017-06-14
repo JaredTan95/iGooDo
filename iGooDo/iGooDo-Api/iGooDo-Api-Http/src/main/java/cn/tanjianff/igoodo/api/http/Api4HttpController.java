@@ -19,6 +19,7 @@ import java.net.URISyntaxException;
 import java.net.URLEncoder;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 /**
  * Created by tanjian on 2017/6/3.
@@ -73,6 +74,12 @@ public class Api4HttpController {
         }else {
             return "{\"msg\":\"Parameter of type has error!参数错误!\"}";
         }
+    }
+
+    @RequestMapping(value = "/reg",method = POST)
+    public String register(String userPhone,String sex,String nickName,String icon,String aliAccount,int credit){
+
+        return "";
     }
 
     /**
