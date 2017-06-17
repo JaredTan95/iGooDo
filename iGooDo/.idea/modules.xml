@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/iGooDo.iml" filepath="$PROJECT_DIR$/iGooDo.iml" />
       <module fileurl="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api.iml" filepath="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/iGooDo-Api-Common.iml" filepath="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/iGooDo-Api-Common.iml" />
       <module fileurl="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/iGooDo-Api-Http.iml" filepath="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/iGooDo-Api-Http.iml" />
       <module fileurl="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Tcp/iGooDo-Api-Tcp.iml" filepath="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Tcp/iGooDo-Api-Tcp.iml" />
     </modules>

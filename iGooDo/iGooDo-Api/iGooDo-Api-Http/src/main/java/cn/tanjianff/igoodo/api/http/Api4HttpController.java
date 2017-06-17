@@ -1,11 +1,13 @@
 package cn.tanjianff.igoodo.api.http;
 
-
-import cn.tanjianff.igoodo.util.CaptchaUtil;
-import cn.tanjianff.igoodo.util.QRCodeUtil;
-import cn.tanjianff.igoodo.util.RandomUtils;
-import cn.tanjianff.igoodo.util.yunpianSmsUtil;
-import org.springframework.context.annotation.ComponentScan;
+import cn.tanjianff.igoodo.common.db.domain.IgdUser;
+import cn.tanjianff.igoodo.common.db.repository.JdbcRepository.JdbcUserRepository;
+import cn.tanjianff.igoodo.common.util.CaptchaUtil;
+import cn.tanjianff.igoodo.common.util.QRCodeUtil;
+import cn.tanjianff.igoodo.common.util.RandomUtils;
+import cn.tanjianff.igoodo.common.util.yunpianSmsUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URLEncoder;
+import java.sql.Date;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
@@ -25,10 +28,12 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
  * Created by tanjian on 2017/6/3.
  * Http Api
  */
-@ComponentScan
 @Controller
 @RequestMapping(value = "/api/v1",produces="text/html;charset=UTF-8")
 public class Api4HttpController {
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
+
     /**
      * Gets chap.
      *
@@ -61,7 +66,7 @@ public class Api4HttpController {
         String apikey= yunpianSmsUtil.getApiKey();
         //修改为您要发送的手机号
         String mobile = URLEncoder.encode(phoneNum,yunpianSmsUtil.ENCODING);
-        String code=RandomUtils.getRandomNumber(4);
+        String code= RandomUtils.getRandomNumber(4);
         String text="";
         if(type.equals("reg") || type.equals("login") || type.equals("gback")){
             switch (type){
@@ -76,10 +81,41 @@ public class Api4HttpController {
         }
     }
 
-    @RequestMapping(value = "/reg",method = POST)
-    public String register(String userPhone,String sex,String nickName,String icon,String aliAccount,int credit){
 
-        return "";
+    /**
+     * Gets sms code.
+     *
+     * @param phoneNum the phone num
+     * @return the sms code
+     * @throws IOException the io exception
+     */
+    @RequestMapping(value = "/SmsCode/{phoneNum}",method = GET)
+    @ResponseBody
+    public String getSmsCode(@PathVariable("phoneNum") String phoneNum) throws IOException {
+        String apikey= yunpianSmsUtil.getApiKey();
+        //修改为您要发送的手机号
+        String mobile = URLEncoder.encode(phoneNum,yunpianSmsUtil.ENCODING);
+        String code= RandomUtils.getRandomNumber(4);
+        String text;
+        text=new JdbcUserRepository(jdbcTemplate)
+                .findById(phoneNum)!=null?yunpianSmsUtil.getLoginSmsTpl(code):yunpianSmsUtil.getRegisterSmsTpl(code);
+        //在云片返回的json基础上添加短信验证码
+        return "["+yunpianSmsUtil.sendSms(apikey, text, mobile)+",{\"SmsCode\":\""+code+"\"}]";
+    }
+
+    @RequestMapping(value = "/RegOrLogin/{phoneNum}",method = POST)
+    public String register(@PathVariable("phoneNum") String phoneNum){
+        //TODO:待完善
+        JdbcUserRepository jdbcUser=new JdbcUserRepository(jdbcTemplate);
+        boolean isExists=jdbcUser.findById(phoneNum)!=null;
+        if(isExists){
+            return "{\"code\":0}";
+        }else {
+            IgdUser user=new IgdUser();
+            user.setUser_phone("12345");
+            user.setUser_regdate(new Date(System.currentTimeMillis()));
+            return jdbcUser.save(user)!=null?user.toString():"{\"code\":2}";
+        }
     }
 
     /**

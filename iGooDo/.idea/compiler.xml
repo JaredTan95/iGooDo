@@ -6,16 +6,22 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="iGooDo-Api-Common" />
         <module name="iGooDo-Api-Http" />
+        <module name="iGooDo-Api-Http-Web" />
         <module name="iGooDo-Api-Tcp" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="iGooDo" target="1.8" />
       <module name="iGooDo-Api" target="1.8" />
+      <module name="iGooDo-Api-Common" target="1.8" />
       <module name="iGooDo-Api-Http" target="1.8" />
+      <module name="iGooDo-Api-Http-Web" target="1.8" />
+      <module name="iGooDo-Api-Http2" target="1.8" />
       <module name="iGooDo-Api-Tcp" target="1.8" />
       <module name="iGooDo-Core" target="1.8" />
+      <module name="iGooDoApiSite" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -22,6 +22,7 @@ public class HttpServerInboundHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg)
             throws Exception {
+        //TODO:请求分发待完善
         if (msg instanceof HttpRequest) {
 
             HttpRequest request = (HttpRequest) msg;
@@ -29,9 +30,11 @@ public class HttpServerInboundHandler extends ChannelInboundHandlerAdapter {
 
             System.out.println("Uri:" + uri);
             System.out.println("UriPath:" + uri.getPath());
+            System.out.println("getQuery:" + uri.getQuery());
+            System.out.println("getUserInfo:" + uri.getUserInfo());
 
             if (uri.getPath().equals("/favicon.ico")) {
-
+                sendSomething(ctx,"Your Request Info:"+uri);
             }
             if (uri.getPath().equals("/")) {
                 //发送主页信息
@@ -41,10 +44,9 @@ public class HttpServerInboundHandler extends ChannelInboundHandlerAdapter {
                 sendSomething(ctx,"hello,"+uri);
             }
 
-
             //判断request请求是否是post请求
             if (request.getMethod().equals(HttpMethod.POST)) {
-
+                sendSomething(ctx,"POST,"+uri);
             }
         }
 

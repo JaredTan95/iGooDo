@@ -40,7 +40,7 @@
         <constructor-arg ref="dataSource"/>
     </bean>
 
-    <bean id="jdbcUserRepository" class="cn.tanjianff.igoodo.api.tcp.db.repository.JdbcRepository.JdbcUserRepository">
+    <bean id="jdbcUserRepository" class="cn.tanjianff.igoodo.common.db.repository.JdbcRepository.JdbcUserRepository">
         <constructor-arg ref="jdbcTemplate"/>
     </bean>
 </beans>

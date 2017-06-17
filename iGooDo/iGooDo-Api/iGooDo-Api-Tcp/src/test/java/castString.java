@@ -1,4 +1,4 @@
-import cn.tanjianff.igoodo.api.tcp.util.FormatData;
+import cn.tanjianff.igoodo.common.util.FormatData;
 
 /**
  * Created by tanjian on 2017/6/12.

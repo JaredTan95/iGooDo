@@ -1,6 +1,6 @@
 package cn.tanjianff.igoodo.api.tcp;
 
-import cn.tanjianff.igoodo.api.tcp.util.FormatData;
+import cn.tanjianff.igoodo.common.util.FormatData;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandler.Sharable;
 import io.netty.channel.ChannelHandlerContext;
@@ -54,7 +54,7 @@ public class BootstrapServerHandler extends SimpleChannelInboundHandler<String> 
         // 收到消息直接打印输出
         System.out.println(ctx.channel().remoteAddress() + " Say : " + msg);
 
-      /*  JdbcUserRepository jdbcUserRepository= new JdbcUserRepository(jdbcTemplate);
+       /* JdbcUserRepository jdbcUserRepository= new JdbcUserRepository(jdbcTemplate);
         System.out.println("==========================="+jdbcUserRepository.findById("123").toString());
         String str=jdbcUserRepository.findById("123").toString();*/
         Channel incoming=ctx.channel();
