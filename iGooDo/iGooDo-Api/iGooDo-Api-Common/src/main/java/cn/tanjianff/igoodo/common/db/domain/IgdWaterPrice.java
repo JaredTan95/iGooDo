@@ -1,6 +1,8 @@
 package cn.tanjianff.igoodo.common.db.domain;
 
 
+import java.sql.Timestamp;
+
 public class IgdWaterPrice {
 
     private String waterId;
@@ -8,6 +10,15 @@ public class IgdWaterPrice {
     private long waterPrice;
     private java.sql.Timestamp waterUpdateTime;
 
+    public IgdWaterPrice() {
+    }
+
+    public IgdWaterPrice(String waterId, String waterDescribe, long waterPrice, Timestamp waterUpdateTime) {
+        this.waterId = waterId;
+        this.waterDescribe = waterDescribe;
+        this.waterPrice = waterPrice;
+        this.waterUpdateTime = waterUpdateTime;
+    }
 
     public String getWaterId() {
         return waterId;

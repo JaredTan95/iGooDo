@@ -30,7 +30,7 @@ public interface WaterPriceRepository {
      * @param id 饮水价格id
      * @return IgdWaterPrice 删除的饮水价格对象实例
      */
-    IgdWaterPrice delete(String id);
+    boolean delete(String id);
 
     /**
      * 查找一条饮水价格记录.

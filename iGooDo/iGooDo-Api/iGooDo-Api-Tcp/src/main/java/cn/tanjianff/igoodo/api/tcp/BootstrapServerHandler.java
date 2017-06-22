@@ -1,6 +1,7 @@
 package cn.tanjianff.igoodo.api.tcp;
 
-import cn.tanjianff.igoodo.common.util.FormatData;
+import cn.tanjianff.igoodo.common.util.RequestFormatData;
+import cn.tanjianff.igoodo.common.util.ResponseFormatData;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandler.Sharable;
 import io.netty.channel.ChannelHandlerContext;
@@ -74,10 +75,30 @@ public class BootstrapServerHandler extends SimpleChannelInboundHandler<String> 
             ctx.writeAndFlush("0000\n");
         }
 
+        if(msg.equals("OPEN")){
+            ResponseFormatData response=new ResponseFormatData();
+            response.setNeedCup(1);
+            response.setAppUserId("18323261979");
+            response.setMsg("60");
+            for (Channel channel : channels) {
+                channel.writeAndFlush(response.FormatToString());
+            }
+        }
+
         //根据msg长度来初步判断是否是有用的数据请求,如果是，则尝试从客户端发送的信息中提取信息,否则不理会;
-        if(msg.length()>=19){
+        if(msg.length()>=16){
             try{
-                ctx.writeAndFlush(new FormatData(msg).toString()+"\n");
+                //响应 LINK
+                if(new RequestFormatData(msg).getType().equals(RequestFormatData.LINK)){
+                    ctx.writeAndFlush("0000");
+                }
+                //响应CHEC
+                if(new RequestFormatData(msg).getType().equals(RequestFormatData.CHEC)){
+                    //TODO:执行业务逻辑
+                    /*Thread.sleep(50000);//模拟执行数据库操作*/
+                    ctx.writeAndFlush("0000");
+                    System.out.println("收到CHEC!!!已发送 0000");
+                }
             }catch (Exception e){
                 if(e instanceof NumberFormatException){
                     //提取消息总长度异常

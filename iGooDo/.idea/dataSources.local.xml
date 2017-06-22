@@ -9,7 +9,9 @@
       <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
       <user-name>dev</user-name>
+      <introspection-schemas>*:iGooDo</introspection-schemas>
       <resolve-scope>iGooDo:</resolve-scope>
+      <unqualified-resolve-schemas>iGooDo:</unqualified-resolve-schemas>
     </data-source>
   </component>
 </project>

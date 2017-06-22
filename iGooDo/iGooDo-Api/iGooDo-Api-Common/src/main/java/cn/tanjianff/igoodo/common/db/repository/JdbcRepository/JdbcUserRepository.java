@@ -28,6 +28,7 @@ public class JdbcUserRepository implements UserRepository {
             "USER_nickname, USER_regdate, USER_icon, USER_alipay_account, USER_credit, " +
             "USER_reserved_field_01, USER_reserved_field_02, USER_reserved_field_03, " +
             "update_time FROM IGD_USER WHERE USER_phone=?";
+    private static final String IS_EXISTS="SELECT  COUNT(*) FROM IGD_USER WHERE USER_phone=?";
     private JdbcTemplate jdbcTemplate;
 
     public JdbcUserRepository(JdbcTemplate jdbcTemplate) {
@@ -48,6 +49,11 @@ public class JdbcUserRepository implements UserRepository {
     }
 
     @Override
+    public boolean isExists(String id) {
+        return jdbcTemplate.queryForObject(IS_EXISTS,Integer.class,id)>0;
+    }
+
+    @Override
     public IgdUser update(IgdUser user) {
         return jdbcTemplate.update(UPDATE_USER,user.getUser_pwd(),user.getUser_sex(),user.getUser_nickname()
                 ,user.getUser_regdate(),user.getUser_icon(),user.getUser_alipay_account(),user.getUser_credit()
@@ -63,9 +69,6 @@ public class JdbcUserRepository implements UserRepository {
     }
 
     private static final class UserRowMapper implements RowMapper<IgdUser>{
-        /*Long user_phone, String user_pwd, int user_sex, String user_nickname, Date user_regdate,
-                 String user_icon, String user_alipay_account, Long user_credit, String user_reserved_field_01,
-                 String user_reserved_field_02, String user_reserved_field_03, Timestamp update_time*/
         @Override
         public IgdUser mapRow(ResultSet resultSet, int i) throws SQLException {
             return new IgdUser(resultSet.getString("USER_phone"),

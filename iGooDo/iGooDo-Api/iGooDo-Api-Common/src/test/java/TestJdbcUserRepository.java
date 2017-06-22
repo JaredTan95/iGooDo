@@ -18,13 +18,18 @@ public class TestJdbcUserRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    @Test
+    //@Test
     public void save(){
         IgdUser user=new IgdUser();
         user.setUser_phone("12345");
         user.setUser_credit((long) 111);
         user.setUser_regdate(new java.sql.Date(System.currentTimeMillis()));
         System.out.println("Albums Count:"+new JdbcUserRepository(jdbcTemplate).save(user).toString());
+    }
+
+    @Test
+    public void hello(){
+        System.out.println("hhhh");
     }
 
     //@Test

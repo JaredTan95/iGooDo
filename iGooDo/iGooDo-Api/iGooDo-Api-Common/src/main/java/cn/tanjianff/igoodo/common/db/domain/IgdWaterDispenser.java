@@ -7,7 +7,7 @@ import java.sql.Timestamp;
 public class IgdWaterDispenser {
 
     private String wdUuid;
-    private double wdSerialnum;
+    private String wdSerialnum;
     private String wdIp;
     private String wdLat;
     private String wdLon;
@@ -21,7 +21,7 @@ public class IgdWaterDispenser {
     public IgdWaterDispenser() {
     }
 
-    public IgdWaterDispenser(String wdUuid, double wdSerialnum, String wdIp, String wdLat, String wdLon,
+    public IgdWaterDispenser(String wdUuid, String wdSerialnum, String wdIp, String wdLat, String wdLon,
                              Date wdPlacedDate, String wdReservedField01,
                              String wdReservedField02, String wdReservedField03,
                              String wdReservedField04, Timestamp wdUpdateTime) {
@@ -55,11 +55,11 @@ public class IgdWaterDispenser {
     }
 
 
-    public double getWdSerialnum() {
+    public String getWdSerialnum() {
         return wdSerialnum;
     }
 
-    public void setWdSerialnum(double wdSerialnum) {
+    public void setWdSerialnum(String wdSerialnum) {
         this.wdSerialnum = wdSerialnum;
     }
 

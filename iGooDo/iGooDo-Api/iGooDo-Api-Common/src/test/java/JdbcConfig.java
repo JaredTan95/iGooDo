@@ -1,6 +1,5 @@
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
@@ -8,7 +7,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import javax.sql.DataSource;
 import java.beans.PropertyVetoException;
 
-@Configuration
+//@Configuration
 public class JdbcConfig {
 
   /*配置C3P0数据库连接池*/

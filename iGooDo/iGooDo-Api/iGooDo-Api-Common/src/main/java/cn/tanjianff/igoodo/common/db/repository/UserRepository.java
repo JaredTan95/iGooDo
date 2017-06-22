@@ -27,6 +27,15 @@ public interface UserRepository {
      */
     IgdUser findById(String id);
 
+
+    /**
+     * Isexists boolean.
+     *
+     * @param id the id
+     * @return the boolean
+     */
+    boolean isExists(String id);
+
     /**
      * 更新用户信息.
      *

@@ -1,6 +1,9 @@
 package cn.tanjianff.igoodo.common.db.domain;
 
 
+import java.sql.Date;
+import java.sql.Timestamp;
+
 public class IgdRefundApplication {
     private double userPhone;
     private String refUuid;
@@ -8,8 +11,22 @@ public class IgdRefundApplication {
     private long refDealed;
     private String refCommit;
     private String refFeedback;
-    private java.sql.Timestamp refUpdateTime;
+    private Timestamp refUpdateTime;
 
+    public IgdRefundApplication() {
+    }
+
+    public IgdRefundApplication(double userPhone, String refUuid, Date refApplyDate,
+                                long refDealed, String refCommit, String refFeedback,
+                                Timestamp refUpdateTime) {
+        this.userPhone = userPhone;
+        this.refUuid = refUuid;
+        this.refApplyDate = refApplyDate;
+        this.refDealed = refDealed;
+        this.refCommit = refCommit;
+        this.refFeedback = refFeedback;
+        this.refUpdateTime = refUpdateTime;
+    }
 
     public double getUserPhone() {
         return userPhone;
