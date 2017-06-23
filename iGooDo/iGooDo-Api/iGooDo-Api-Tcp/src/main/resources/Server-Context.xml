@@ -43,4 +43,5 @@
     <bean id="jdbcUserRepository" class="cn.tanjianff.igoodo.common.db.repository.JdbcRepository.JdbcUserRepository">
         <constructor-arg ref="jdbcTemplate"/>
     </bean>
+
 </beans>

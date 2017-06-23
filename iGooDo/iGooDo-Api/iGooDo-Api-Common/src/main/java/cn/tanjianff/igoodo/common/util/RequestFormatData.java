@@ -20,6 +20,8 @@ public class RequestFormatData {
     private int ml;
     private String todoString;
     private String msg;
+    private String serialNum;
+
 
     public RequestFormatData(String todoString) {
         this.todoString = todoString;
@@ -36,7 +38,15 @@ public class RequestFormatData {
                 this.msg = todoString.substring(23, len);
             }
             break;
+            case LINK: {
+                this.serialNum=todoString.substring(8,16);
+            }
+            break;
         }
+    }
+
+    public int getLen() {
+        return len;
     }
 
     public static String getLINK() {
@@ -97,6 +107,14 @@ public class RequestFormatData {
         this.msg = msg;
     }
 
+    public String getSerialNum() {
+        return serialNum;
+    }
+
+    public void setSerialNum(String serialNum) {
+        this.serialNum = serialNum;
+    }
+
     @Override
     public String toString() {
         return "RequestFormatData{" +
@@ -106,6 +124,7 @@ public class RequestFormatData {
                 ", ml=" + ml +
                 ", todoString='" + todoString + '\'' +
                 ", msg='" + msg + '\'' +
+                ", serialNum='" + serialNum + '\'' +
                 '}';
     }
 }

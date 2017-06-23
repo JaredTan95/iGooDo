@@ -9,7 +9,7 @@ public class castString {
 
         System.out.println("=======RequestFormatData==========");
         String ping = "0008PING";
-        String chec = "0023CHEC183232619792242";
+        String chec = "0016LINK12345678";
         RequestFormatData formatData=new RequestFormatData(ping);
         RequestFormatData formatData2=new RequestFormatData(chec);
         System.out.println(formatData.toString());

@@ -28,7 +28,7 @@ public class WaterDispenserController {
     @RequestMapping(value = "/open")
     @ResponseBody
     public String open(String appUserId,int cup,String Serialnum,int temp){
-        //TODO:通过TCP向单片机发送消息，打开电子开关.
+        //TODO:通过TCP向单片机发送消息，打开电子开关.暂时不采用Http，在netty中实现Http请求，通过SocketChannel发送打开饮水机请求
         return "";
     }
 }

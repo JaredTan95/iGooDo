@@ -1,11 +1,10 @@
 package cn.tanjianff.igoodo.common.db.repository.JdbcRepository;
 
 
-import cn.tanjianff.igoodo.common.db.repository.UserInfoRepository;
 import cn.tanjianff.igoodo.common.db.domain.IgdUserInformation;
+import cn.tanjianff.igoodo.common.db.repository.UserInfoRepository;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.stereotype.Service;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,7 +12,6 @@ import java.sql.SQLException;
 /**
  * Created by tanjian on 2017/6/5.
  */
-@Service("jdbcUserInfoRepository")
 public class JdbcUserInfoRepository implements UserInfoRepository {
     private JdbcTemplate jdbcTemplate;
 

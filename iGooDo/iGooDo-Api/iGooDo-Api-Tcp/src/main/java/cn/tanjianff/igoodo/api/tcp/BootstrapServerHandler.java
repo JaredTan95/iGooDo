@@ -25,10 +25,9 @@ import java.net.SocketAddress;
 public class BootstrapServerHandler extends SimpleChannelInboundHandler<String> {
     public static ChannelGroup channels = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
 
+    private static String uuid;
     private int counter=0;
 
-    //TODO:调试使用
-    private static String uuid;
     @Autowired
     private JdbcTemplate jdbcTemplate;
     @Override
@@ -54,20 +53,16 @@ public class BootstrapServerHandler extends SimpleChannelInboundHandler<String> 
     protected void channelRead0(ChannelHandlerContext ctx, String msg) throws Exception {
         // 收到消息直接打印输出
         System.out.println(ctx.channel().remoteAddress() + " Say : " + msg);
-
-       /* JdbcUserRepository jdbcUserRepository= new JdbcUserRepository(jdbcTemplate);
-        System.out.println("==========================="+jdbcUserRepository.findById("123").toString());
-        String str=jdbcUserRepository.findById("123").toString();*/
+/*
+        JdbcUserRepository jdbcUserRepository= new JdbcUserRepository(jdbcTemplate);
+        String str=jdbcUserRepository.findById("18323261979").toString();
+        System.out.println(str);*/
         Channel incoming=ctx.channel();
         SocketAddress remoteAdress=incoming.remoteAddress();
         // 返回客户端消息 - 我已经接收到了你的消息
         ctx.writeAndFlush("Received:"+msg+"\nYour R:"+remoteAdress.toString()+"\n");
 
         //调试时是否沾包
-        //  System.out.println("收到消息数:"+(++counter));
-        if(msg.equals("print")){
-            ClientTcpSocketChannelMap.getChannels().get(BootstrapServerHandler.uuid).writeAndFlush("\nrecevied from another socketchaneel,your uuid is:"+uuid+"\n");
-        }
 
         if(msg.equals("PING")){
             //客户端ping,心跳检测，并返回0000状态状态码,
@@ -80,20 +75,24 @@ public class BootstrapServerHandler extends SimpleChannelInboundHandler<String> 
             response.setNeedCup(1);
             response.setAppUserId("18323261979");
             response.setMsg("60");
-            for (Channel channel : channels) {
-                channel.writeAndFlush(response.FormatToString());
-            }
+            ClientTcpSocketChannelMap.getSocketChannel("12345678")
+                    .writeAndFlush(response.FormatToString());
         }
 
         //根据msg长度来初步判断是否是有用的数据请求,如果是，则尝试从客户端发送的信息中提取信息,否则不理会;
         if(msg.length()>=16){
             try{
                 //响应 LINK
-                if(new RequestFormatData(msg).getType().equals(RequestFormatData.LINK)){
+                RequestFormatData request=new RequestFormatData(msg);
+                if(request.getType().equals(RequestFormatData.LINK)){
+                    //从消息中解析到机器的序列号，同时更新连接Map
+                    String serialNum=request.getSerialNum();
+                    System.out.print("在解析过程中得到的UUID,是否改变:\n"+ctx.channel().id().asLongText());
+                    ClientTcpSocketChannelMap.getSerialNumMap().put(serialNum,ctx.channel().id().asLongText());
                     ctx.writeAndFlush("0000");
                 }
                 //响应CHEC
-                if(new RequestFormatData(msg).getType().equals(RequestFormatData.CHEC)){
+                if(request.getType().equals(RequestFormatData.CHEC)){
                     //TODO:执行业务逻辑
                     /*Thread.sleep(50000);//模拟执行数据库操作*/
                     ctx.writeAndFlush("0000");
@@ -124,8 +123,8 @@ public class BootstrapServerHandler extends SimpleChannelInboundHandler<String> 
         ctx.writeAndFlush( "Welcome to iGooDo Tcp service!\n"+"Your R:"+ctx.channel().remoteAddress()+"\n");
 
         //TODO:待切换为以连接客户端IP为key---> String key= RegexUtils.getIp(ctx.channel().remoteAddress().toString());
-        String uuid=ctx.channel().id().asLongText();
-        BootstrapServerHandler.uuid=uuid;
+        uuid=ctx.channel().id().asLongText();
+        System.out.print("刚建立连接时的UUID:\n"+uuid+"\n");
         ClientTcpSocketChannelMap.addTcpSocketChannel(uuid, (SocketChannel) ctx.channel());
 
         super.channelActive(ctx);

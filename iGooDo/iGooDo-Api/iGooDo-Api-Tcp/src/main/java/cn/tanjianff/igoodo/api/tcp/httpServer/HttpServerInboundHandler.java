@@ -1,5 +1,7 @@
 package cn.tanjianff.igoodo.api.tcp.httpServer;
 
+import cn.tanjianff.igoodo.api.tcp.ClientTcpSocketChannelMap;
+import cn.tanjianff.igoodo.common.db.repository.JdbcRepository.JdbcUserRepository;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFutureListener;
@@ -9,6 +11,8 @@ import io.netty.handler.codec.http.*;
 import io.netty.util.CharsetUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.net.URI;
 
@@ -18,13 +22,16 @@ import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
 
 public class HttpServerInboundHandler extends ChannelInboundHandlerAdapter {
     private static Log log = LogFactory.getLog(HttpServerInboundHandler.class);
+    private JdbcUserRepository jdbcUserRepository;
+
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg)
             throws Exception {
         //TODO:请求分发待完善
         if (msg instanceof HttpRequest) {
-
             HttpRequest request = (HttpRequest) msg;
             URI uri = new URI(request.getUri());
 
@@ -40,8 +47,18 @@ public class HttpServerInboundHandler extends ChannelInboundHandlerAdapter {
                 //发送主页信息
                 this.sendWelcome(ctx);
             }
-            if (uri.getPath().equals("/tanjian")) {
-                sendSomething(ctx,"hello,"+uri);
+            if (uri.getPath().equals("/getUserInfo")) {
+                jdbcUserRepository= new JdbcUserRepository(jdbcTemplate);
+                String info=jdbcUserRepository.findById("18323261979").toString();
+                sendSomething(ctx,"hello,"+uri+info);
+            }
+
+            if(uri.getPath().equals("/open")){
+                //TODO:做异常处理
+                ClientTcpSocketChannelMap.getSocketChannel("12345678")
+                        .writeAndFlush("\nrecevied from another socketchaneel 12345678");
+
+                sendSomething(ctx,"You send:,"+uri.getQuery());
             }
 
             //判断request请求是否是post请求
