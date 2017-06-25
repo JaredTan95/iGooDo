@@ -51,13 +51,16 @@
     </bean>-->
 
     <bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
-        <!-- <property name="extractValueFromSingleKeyModel" value="true"/> -->
         <property name="prettyPrint" value="true"/>
         <property name="contentType" value="text/plain"/>
         <property name="encoding" value="UTF8"/>
     </bean>
 
     <bean id="jdbcUserInfoRepository" class="cn.tanjianff.igoodo.common.db.repository.JdbcRepository.JdbcUserInfoRepository">
+        <constructor-arg ref="jdbcTemplate"/>
+    </bean>
+
+    <bean id="jdbcUserRepository" class="cn.tanjianff.igoodo.common.db.repository.JdbcRepository.JdbcUserRepository">
         <constructor-arg ref="jdbcTemplate"/>
     </bean>
 </beans>

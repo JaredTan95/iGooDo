@@ -2,6 +2,10 @@ package cn.tanjianff.igoodo.common.db.repository.JdbcRepository;
 
 import cn.tanjianff.igoodo.common.db.domain.IgdUser;
 import cn.tanjianff.igoodo.common.db.repository.UserRepository;
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Service;
@@ -15,8 +19,10 @@ import java.util.Map;
  * Created by tanjian on 2017/6/4.
  * 基于JdbcTemplate实现用户基础信息数据库仓库接口
  */
+@ComponentScan
 @Service("jdbcUserRepository")
 public class JdbcUserRepository implements UserRepository {
+    private static Logger log= Logger.getLogger(JdbcUserRepository.class);
     private static final String SAVE="INSERT INTO iGooDo.IGD_USER (USER_phone, USER_pwd," +
             " USER_sex, USER_nickname, USER_regdate, USER_icon, USER_alipay_account, USER_credit," +
             " USER_reserved_field_01, USER_reserved_field_02, USER_reserved_field_03, update_time) " +
@@ -29,6 +35,8 @@ public class JdbcUserRepository implements UserRepository {
             "USER_reserved_field_01, USER_reserved_field_02, USER_reserved_field_03, " +
             "update_time FROM IGD_USER WHERE USER_phone=?";
     private static final String IS_EXISTS="SELECT  COUNT(*) FROM IGD_USER WHERE USER_phone=?";
+
+    @Autowired
     private JdbcTemplate jdbcTemplate;
 
     public JdbcUserRepository(JdbcTemplate jdbcTemplate) {
@@ -44,13 +52,28 @@ public class JdbcUserRepository implements UserRepository {
     }
 
     @Override
-    public IgdUser findById(String id) {
-        return jdbcTemplate.queryForObject(SELECT_BASE_USER,new UserRowMapper(),id);
+    public IgdUser findById(String id){
+        try {
+            return jdbcTemplate.queryForObject(SELECT_BASE_USER,new UserRowMapper(),id);
+        }catch (Exception e){
+            if (e instanceof DataAccessException){
+                e.printStackTrace();
+                log.error("!!!!!!!!!!!!!! User id :"+id+" is not exsits!");
+            }
+            return new IgdUser();
+        }
     }
 
     @Override
     public boolean isExists(String id) {
-        return jdbcTemplate.queryForObject(IS_EXISTS,Integer.class,id)>0;
+        try {
+            return jdbcTemplate.queryForObject(IS_EXISTS,Integer.class,id)>0;
+        }catch (Exception e){
+            if(e instanceof DataAccessException){
+                log.error("!!!!!!!!!!!!!! User id :"+id+" is not exsits!");
+            }
+            return false;
+        }
     }
 
     @Override

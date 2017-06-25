@@ -13,20 +13,21 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Service;
 
 import java.net.URI;
 
 import static io.netty.handler.codec.http.HttpHeaders.Names.CONTENT_TYPE;
 import static io.netty.handler.codec.http.HttpResponseStatus.OK;
 import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
-
+@Service("httpServerInboundHandler")
 public class HttpServerInboundHandler extends ChannelInboundHandlerAdapter {
     private static Log log = LogFactory.getLog(HttpServerInboundHandler.class);
-    private JdbcUserRepository jdbcUserRepository;
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
-
+    @Autowired
+    private JdbcUserRepository jdbcUserRepository;
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg)
             throws Exception {
@@ -47,10 +48,11 @@ public class HttpServerInboundHandler extends ChannelInboundHandlerAdapter {
                 //发送主页信息
                 this.sendWelcome(ctx);
             }
-            if (uri.getPath().equals("/getUserInfo")) {
-                jdbcUserRepository= new JdbcUserRepository(jdbcTemplate);
-                String info=jdbcUserRepository.findById("18323261979").toString();
-                sendSomething(ctx,"hello,"+uri+info);
+            if (uri.getPath().equals("/getUser")) {
+                sendSomething(ctx,"hello,"+uri);
+
+                String string= jdbcUserRepository.findById("18323261979").toString();
+                log.info(string);
             }
 
             if(uri.getPath().equals("/open")){

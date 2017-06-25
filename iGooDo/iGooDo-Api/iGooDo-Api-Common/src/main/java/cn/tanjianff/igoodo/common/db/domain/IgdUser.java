@@ -141,19 +141,19 @@ public class IgdUser implements Serializable{
 
   @Override
   public String toString() {
-    return "IgdUser{" +
-            "user_phone='" + user_phone + '\'' +
-            ", user_pwd='" + user_pwd + '\'' +
-            ", user_sex=" + user_sex +
-            ", user_nickname='" + user_nickname + '\'' +
-            ", user_regdate=" + user_regdate +
-            ", user_icon='" + user_icon + '\'' +
-            ", user_alipay_account='" + user_alipay_account + '\'' +
-            ", user_credit=" + user_credit +
-            ", user_reserved_field_01='" + user_reserved_field_01 + '\'' +
-            ", user_reserved_field_02='" + user_reserved_field_02 + '\'' +
-            ", user_reserved_field_03='" + user_reserved_field_03 + '\'' +
-            ", update_time=" + update_time +
+    return "{" +
+            "user_phone:'" + user_phone + '\'' +
+            ", user_pwd:'" + user_pwd + '\'' +
+            ", user_sex:" + user_sex +
+            ", user_nickname:'" + user_nickname + '\'' +
+            ", user_regdate:" + user_regdate +
+            ", user_icon:'" + user_icon + '\'' +
+            ", user_alipay_account:'" + user_alipay_account + '\'' +
+            ", user_credit:" + user_credit +
+            ", user_reserved_field_01:'" + user_reserved_field_01 + '\'' +
+            ", user_reserved_field_02:'" + user_reserved_field_02 + '\'' +
+            ", user_reserved_field_03:'" + user_reserved_field_03 + '\'' +
+            ", update_time:" + update_time +
             '}';
   }
 }

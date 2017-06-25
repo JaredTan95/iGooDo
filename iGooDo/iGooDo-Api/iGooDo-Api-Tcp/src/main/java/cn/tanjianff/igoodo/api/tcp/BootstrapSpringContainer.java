@@ -12,7 +12,7 @@ public class BootstrapSpringContainer {
 		// TODO 程序主入口
 		//加载spirng配置文件
 		ApplicationContext context= new ClassPathXmlApplicationContext("Server-Context.xml");
-
+		log.debug(context);
 		//HelloServer helloServer= (HelloServer) context.getBean("helloServer");
 	}
 

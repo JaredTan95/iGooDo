@@ -9,6 +9,8 @@
 
     <context:annotation-config/>
     <context:component-scan base-package="cn.tanjianff.igoodo.api" />
+    <context:component-scan base-package="cn.tanjianff.igoodo.api.tcp.httpServer" />
+    <context:component-scan base-package="cn.tanjianff.igoodo.common.db.repository" />
 
     <!-- 传统方法配置BEAN
     <bean id="helloServer" class="com.netty.HelloServer" init-method="serverStart">
@@ -40,8 +42,5 @@
         <constructor-arg ref="dataSource"/>
     </bean>
 
-    <bean id="jdbcUserRepository" class="cn.tanjianff.igoodo.common.db.repository.JdbcRepository.JdbcUserRepository">
-        <constructor-arg ref="jdbcTemplate"/>
-    </bean>
-
+  <!-- <bean id="jdbcUserRepository" class="cn.tanjianff.igoodo.common.db.repository.JdbcRepository.JdbcUserRepository"/>-->
 </beans>

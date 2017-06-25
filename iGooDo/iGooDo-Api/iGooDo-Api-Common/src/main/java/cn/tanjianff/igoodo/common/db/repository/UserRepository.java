@@ -2,6 +2,7 @@ package cn.tanjianff.igoodo.common.db.repository;
 
 
 import cn.tanjianff.igoodo.common.db.domain.IgdUser;
+import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
@@ -9,6 +10,7 @@ import java.util.Map;
  * Created by tanjian on 2017/6/4.
  * 用户基础信息数据仓库接口
  */
+@Service("userRepository")
 public interface UserRepository {
 
     /**
