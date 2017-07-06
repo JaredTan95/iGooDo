@@ -48,7 +48,8 @@ public class JdbcUserRepository implements UserRepository {
         return jdbcTemplate.update(SAVE,user.getUser_phone(),user.getUser_pwd(),user.getUser_sex()
                 ,user.getUser_nickname(),user.getUser_regdate(),user.getUser_icon()
                 ,user.getUser_alipay_account(),user.getUser_credit(),user.getUser_reserved_field_01()
-                ,user.getUser_reserved_field_02(),user.getUser_reserved_field_03(),user.getUpdate_time())>0 ?user: new IgdUser();
+                ,user.getUser_reserved_field_02(),user.getUser_reserved_field_03(),user.getUpdate_time())>0
+                ?user: null;
     }
 
     @Override
@@ -60,7 +61,7 @@ public class JdbcUserRepository implements UserRepository {
                 e.printStackTrace();
                 log.error("!!!!!!!!!!!!!! User id :"+id+" is not exsits!");
             }
-            return new IgdUser();
+            return null;
         }
     }
 
