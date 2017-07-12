@@ -35,6 +35,18 @@ public class UserController {
     }
 
     /**
+     * 获取用户扩展信息.
+     *
+     * @param phoneNum 用户id，号码
+     * @return 响应消息
+     */
+    @RequestMapping(value = "/getExtInfo")
+    @ResponseBody
+    public MyRespMsgEntity getExtInfo(String phoneNum) {
+        return userService.getExtInfo(phoneNum);
+    }
+
+    /**
      * 注册或登录接口.如果存在该用户则发送短信，否则自动注册
      *
      * @param phoneNum 电话号码
@@ -45,5 +57,4 @@ public class UserController {
     public MyRespMsgEntity register(@PathVariable("phoneNum") String phoneNum) {
         return userService.userRegiterOrLogin(phoneNum);
     }
-
 }

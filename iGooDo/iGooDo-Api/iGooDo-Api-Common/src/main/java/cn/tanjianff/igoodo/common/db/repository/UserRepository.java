@@ -19,7 +19,7 @@ public interface UserRepository {
      * @param user 需要保存的用户信息对象实例
      * @return IgdUser 用户对象实例;保存后的用户信息。
      */
-    IgdUser save(IgdUser user);
+    boolean save(IgdUser user);
 
     /**
      * 通过用户id查找用户细信息.

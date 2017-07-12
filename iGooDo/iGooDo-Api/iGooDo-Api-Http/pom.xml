@@ -8,7 +8,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>iGooDo-Api-Http</artifactId>
     <packaging>war</packaging>
-    <name>iGooDo-Api-Http Maven Webapp</name>
+    <name>iGooDo-Api-Http Maven Api</name>
     <url>http://maven.apache.org</url>
 
     <dependencies>

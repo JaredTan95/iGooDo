@@ -4,7 +4,7 @@ import cn.tanjianff.igoodo.api.http.MyRespMsgEntity;
 
 /**
  * Created by tanjian on 2017/7/6.
- * 用户服务
+ * 用户服务接口
  */
 public interface UserService {
     /**
@@ -22,4 +22,13 @@ public interface UserService {
      * @return the my resp msg entity
      */
     MyRespMsgEntity userRegiterOrLogin(String phoneNum);
+
+
+    /**
+     * Gets ext info.
+     *
+     * @param phonNum the phon num
+     * @return the ext info
+     */
+    MyRespMsgEntity getExtInfo(String phonNum);
 }

@@ -39,17 +39,23 @@ public class JdbcUserRepository implements UserRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+    private JdbcUserInfoRepository jdbcUserInfoRepository;
+
+    @Autowired
+    public void setJdbcUserInfoRepository(JdbcUserInfoRepository jdbcUserInfoRepository) {
+        this.jdbcUserInfoRepository = jdbcUserInfoRepository;
+    }
+
     public JdbcUserRepository(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate=jdbcTemplate;
     }
 
     @Override
-    public IgdUser save(IgdUser user) {
+    public boolean save(IgdUser user) {
         return jdbcTemplate.update(SAVE,user.getUser_phone(),user.getUser_pwd(),user.getUser_sex()
                 ,user.getUser_nickname(),user.getUser_regdate(),user.getUser_icon()
                 ,user.getUser_alipay_account(),user.getUser_credit(),user.getUser_reserved_field_01()
-                ,user.getUser_reserved_field_02(),user.getUser_reserved_field_03(),user.getUpdate_time())>0
-                ?user: null;
+                ,user.getUser_reserved_field_02(),user.getUser_reserved_field_03(),user.getUpdate_time())>0;
     }
 
     @Override
@@ -88,7 +94,7 @@ public class JdbcUserRepository implements UserRepository {
     public Map<String,Object> getRelatedInfo(String id) {
         Map<String,Object> map= new HashMap<>();
         map.put("user_base",this.findById(id));
-        map.put("user_extInfo",new JdbcUserInfoRepository(jdbcTemplate).findById(id));
+        map.put("user_extInfo",jdbcUserInfoRepository.findById(id));
         return map;
     }
 

@@ -107,7 +107,7 @@ public class BootstrapServerHandler extends SimpleChannelInboundHandler<String> 
                 if (request.getType().equals(RequestFormatData.CHEC)) {
                     //TODO:执行业务逻辑
                     /*Thread.sleep(50000);//模拟执行数据库操作*/
-                    ctx.writeAndFlush("0000");
+                    ctx.writeAndFlush("0000\n");
                     System.out.println("收到CHEC!!!已发送 0000");
                 }
             } catch (Exception e) {

@@ -14,7 +14,7 @@ public interface UserInfoRepository {
      * @param information 用户扩展信息对象实例
      * @return IgdUserInformation 保存的用户扩展信息的对象实例
      */
-    IgdUserInformation save(IgdUserInformation information);
+    boolean save(IgdUserInformation information);
 
     /**
      * 通过用户扩展信息的id查找到与之对应的信息.

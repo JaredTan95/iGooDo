@@ -5,6 +5,7 @@ import cn.tanjianff.igoodo.common.db.domain.IgdUserInformation;
 import cn.tanjianff.igoodo.common.db.repository.UserInfoRepository;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Component;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,6 +13,7 @@ import java.sql.SQLException;
 /**
  * Created by tanjian on 2017/6/5.
  */
+@Component("jdbcUserInfoRepository")
 public class JdbcUserInfoRepository implements UserInfoRepository {
     private JdbcTemplate jdbcTemplate;
 
@@ -32,13 +34,13 @@ public class JdbcUserInfoRepository implements UserInfoRepository {
     }
 
     @Override
-    public IgdUserInformation save(IgdUserInformation info) {
+    public boolean save(IgdUserInformation info) {
         return jdbcTemplate.update(INSET,info.getUserPhone(),info.getInfBirthday()
         ,info.getInfWeightKg(),info.getInfHeightCm(),info.getInfReservedField01()
         ,info.getInfReservedField02(),info.getInfReservedField03()
         ,info.getInfReservedField04(),info.getInfReservedField05()
         ,info.getInfReservedField06(),info.getInfReservedField07()
-        ,info.getInfReservedField08(),info.getUpdateTime())>0?info:new IgdUserInformation();
+        ,info.getInfReservedField08(),info.getUpdateTime())>0;
     }
 
     @Override
