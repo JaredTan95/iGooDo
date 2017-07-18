@@ -8,12 +8,20 @@ import cn.tanjianff.igoodo.api.http.MyRespMsgEntity;
  */
 public interface UserService {
     /**
-     * 获取用户基本信息.
+     * 获取用户信息.
      *
      * @param id the id
      * @return the my info
      */
     MyRespMsgEntity getMyInfo(String id);
+
+    /**
+     * 获取用户基本信息.
+     *
+     * @param id the id
+     * @return the my info
+     */
+    MyRespMsgEntity getMyBaseInfo(String id);
 
     /**
      * User regiter or login my resp msg entity.
@@ -24,6 +32,13 @@ public interface UserService {
     MyRespMsgEntity userRegiterOrLogin(String phoneNum);
 
 
+    /**
+     * 带自动发送验证码的业务，备用
+     *
+     * @param phoneNum the phone num
+     * @return the my resp msg entity
+     */
+    MyRespMsgEntity userRegiterOrLogin2(String phoneNum);
     /**
      * Gets ext info.
      *

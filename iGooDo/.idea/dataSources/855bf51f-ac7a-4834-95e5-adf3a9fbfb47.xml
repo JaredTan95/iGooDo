@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="@iGooDo">
-  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.2">
     <root id="1"/>
     <schema id="2" parent="1" name="iGooDo">
       <Current>1</Current>
@@ -44,8 +44,10 @@
     <column id="15" parent="4" name="update_time">
       <Position>7</Position>
       <DataType>timestamp|0</DataType>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
     <key id="16" parent="4" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
       <ColNames>USER_phone
 REF_UUID</ColNames>
       <Primary>1</Primary>
@@ -64,18 +66,15 @@ REF_UUID</ColNames>
     <column id="19" parent="5" name="USER_pwd">
       <Position>2</Position>
       <DataType>varchar(65)|0</DataType>
-      <NotNull>1</NotNull>
     </column>
     <column id="20" parent="5" name="USER_sex">
       <Position>3</Position>
-      <DataType>smallint(6)|0</DataType>
-      <NotNull>1</NotNull>
+      <DataType>int(1)|0</DataType>
       <DefaultExpression>&apos;1&apos;</DefaultExpression>
     </column>
     <column id="21" parent="5" name="USER_nickname">
       <Position>4</Position>
       <DataType>char(24)|0</DataType>
-      <NotNull>1</NotNull>
     </column>
     <column id="22" parent="5" name="USER_regdate">
       <Position>5</Position>
@@ -110,9 +109,10 @@ REF_UUID</ColNames>
     <column id="29" parent="5" name="update_time">
       <Position>12</Position>
       <DataType>timestamp|0</DataType>
-      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
     <key id="30" parent="5" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
       <ColNames>USER_phone</ColNames>
       <Primary>1</Primary>
     </key>
@@ -169,8 +169,10 @@ REF_UUID</ColNames>
       <Position>13</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
     <key id="44" parent="6" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
       <ColNames>USER_phone</ColNames>
       <Primary>1</Primary>
     </key>
@@ -221,16 +223,18 @@ REF_UUID</ColNames>
       <Position>9</Position>
       <DataType>varchar(1)|0</DataType>
     </column>
-    <column id="55" parent="7" name="WD_IP">
-      <Position>11</Position>
-      <DataType>varchar(20)|0</DataType>
-    </column>
-    <column id="56" parent="7" name="update_time">
+    <column id="55" parent="7" name="update_time">
       <Position>10</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <column id="56" parent="7" name="WD_IP">
+      <Position>11</Position>
+      <DataType>varchar(20)|0</DataType>
     </column>
     <key id="57" parent="7" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
       <ColNames>WD_UUID</ColNames>
       <Primary>1</Primary>
     </key>
@@ -252,8 +256,10 @@ REF_UUID</ColNames>
     <column id="61" parent="8" name="update_time">
       <Position>4</Position>
       <DataType>timestamp|0</DataType>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
     <key id="62" parent="8" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
       <ColNames>WATER_id</ColNames>
       <Primary>1</Primary>
     </key>

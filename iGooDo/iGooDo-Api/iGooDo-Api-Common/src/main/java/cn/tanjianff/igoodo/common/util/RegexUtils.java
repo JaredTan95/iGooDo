@@ -2,6 +2,7 @@ package cn.tanjianff.igoodo.common.util;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
 
 /**
  * 常用的正则表达式
@@ -14,14 +15,14 @@ public class RegexUtils {
      * @return 提取出来的 ip
      */
 
-    public static String getIp(String todoIp){
-        if(null == todoIp|| "".equals(todoIp)){
+    public static String getIp(String todoIp) {
+        if (null == todoIp || "".equals(todoIp)) {
             return "null string";
-        }else {
+        } else {
             /*首先提取出纯ip地址，去除端口号;例如：/127.0.0.1:50064*/
-            String [] newIp=todoIp.substring(1,todoIp.length()).split(":");
-            String ip=newIp[0];
-            return isIp(ip)?ip:"null string";
+            String[] newIp = todoIp.substring(1, todoIp.length()).split(":");
+            String ip = newIp[0];
+            return isIp(ip) ? ip : "null string";
         }
     }
 
@@ -40,10 +41,10 @@ public class RegexUtils {
                 + "(1\\d{2}|2[0-4]\\d|25[0-5]|[1-9]\\d|\\d)$";
         return ip.matches(regex);
     }
- 
+
     /**
      * 判断是否是正确的邮箱地址
-     * 
+     *
      * @param email
      * @return boolean true,通过，false，没通过
      */
@@ -53,9 +54,10 @@ public class RegexUtils {
         String regex = "\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
         return email.matches(regex);
     }
- 
+
     /**
      * 判断是否含有中文，仅适合中国汉字，不包括标点
+     *
      * @param text
      * @return boolean true,通过，false，没通过
      */
@@ -66,12 +68,11 @@ public class RegexUtils {
         Matcher m = p.matcher(text);
         return m.find();
     }
- 
+
     /**
      * 判断是否正整数
-     * 
-     * @param number
-     *            数字
+     *
+     * @param number 数字
      * @return boolean true,通过，false，没通过
      */
     public static boolean isNumber(String number) {
@@ -80,14 +81,12 @@ public class RegexUtils {
         String regex = "[0-9]*";
         return number.matches(regex);
     }
- 
+
     /**
      * 判断几位小数(正数)
-     * 
-     * @param decimal
-     *            数字
-     * @param count
-     *            小数位数
+     *
+     * @param decimal 数字
+     * @param count   小数位数
      * @return boolean true,通过，false，没通过
      */
     public static boolean isDecimal(String decimal, int count) {
@@ -97,24 +96,49 @@ public class RegexUtils {
                 + "})?$";
         return decimal.matches(regex);
     }
- 
+
     /**
-     * 判断是否是手机号码
-     * 
-     * @param phoneNumber
-     *            手机号码
-     * @return boolean true,通过，false，没通过
+     * 大陆号码或香港号码均可
      */
-    public static boolean isPhoneNumber(String phoneNumber) {
+    public static boolean isPhoneLegal(String str)throws PatternSyntaxException {
+        return isChinaPhoneLegal(str) || isHKPhoneLegal(str);
+    }
+
+    /**
+     * 大陆手机号码11位数，匹配格式：前三位固定格式+后8位任意数
+     */
+    public static boolean isChinaPhoneLegal(String phoneNumber) throws PatternSyntaxException {
         if (null == phoneNumber || "".equals(phoneNumber))
             return false;
-        String regex = "^1[3|4|5|8][0-9]\\d{8}$";
-        return phoneNumber.matches(regex);
+        /*  * 此方法中前三位格式有：
+     * 13+任意数
+     * 15+除4的任意数
+     * 18+除1和4的任意数
+     * 17+除9的任意数
+     * 147*/
+       // String regExp = "^((13[0-9])|(15[^4])|(18[0,2,3,5-9])|(17[0-8])|(147))\\d{8}$";
+        String regExp = "^[1][3,4,5,7,8][0-9]{9}$";
+        Pattern p = Pattern.compile(regExp);
+        Matcher m = p.matcher(phoneNumber);
+        return m.matches();
     }
- 
+
+
+    /**
+     * 香港手机号码8位数，5|6|8|9开头+7位任意数
+     */
+    public static boolean isHKPhoneLegal(String phoneNumber) throws PatternSyntaxException {
+        if (null == phoneNumber || "".equals(phoneNumber))
+            return false;
+        String regExp = "^(5|6|8|9)\\d{7}$";
+        Pattern p = Pattern.compile(regExp);
+        Matcher m = p.matcher(phoneNumber);
+        return m.matches();
+    }
+
     /**
      * 判断是否含有特殊字符
-     * 
+     *
      * @param text
      * @return boolean true,通过，false，没通过
      */
@@ -127,7 +151,7 @@ public class RegexUtils {
         }
         return false;
     }
-     
+
     /**
      * 适应CJK（中日韩）字符集，部分中日韩的字是一样的
      */
@@ -141,7 +165,7 @@ public class RegexUtils {
         }
         return false;
     }
- 
+
     private static boolean isChinese(char c) {
         Character.UnicodeBlock ub = Character.UnicodeBlock.of(c);
         if (ub == Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS
@@ -155,5 +179,5 @@ public class RegexUtils {
         }
         return false;
     }
- 
+
 }

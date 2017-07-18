@@ -17,44 +17,90 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class UserController {
     private UserService userService;
 
+    /**
+     * Sets user service.
+     *
+     * @param userService the user service
+     */
     @Autowired
     public void setUserService(UserService userService) {
         this.userService = userService;
     }
 
     /**
-     * 获取莫个用户的基础信息.
+     * 获取莫个用户的信息.
      *
      * @param id 用户id
-     * @return 响应消息
+     * @return 响应消息 my info
      */
     @RequestMapping(value = "")
     @ResponseBody
-    public MyRespMsgEntity get(String id) {
-        return userService.getMyInfo(id);
+    public MyRespMsgEntity getMyInfo(String id) {
+        try {
+            return userService.getMyInfo(id);
+        } catch (Exception e) {
+            return MyRespMsgEntity.getFailedMsg().put("error", e.getMessage());
+        }
+    }
+
+
+    /**
+     * 获取用户基本信息.
+     *
+     * @param id 用户id
+     * @return 基本信息 my base info
+     */
+    @RequestMapping(value = "/getMyBaseInfo")
+    @ResponseBody
+    public MyRespMsgEntity getMyBaseInfo(String id) {
+        try {
+            return userService.getMyBaseInfo(id);
+        } catch (Exception e) {
+            return MyRespMsgEntity.getFailedMsg().put("error", e.getMessage());
+        }
     }
 
     /**
      * 获取用户扩展信息.
      *
      * @param phoneNum 用户id，号码
-     * @return 响应消息
+     * @return 响应消息 ext info
      */
     @RequestMapping(value = "/getExtInfo")
     @ResponseBody
     public MyRespMsgEntity getExtInfo(String phoneNum) {
-        return userService.getExtInfo(phoneNum);
+        try {
+            return userService.getExtInfo(phoneNum);
+        }catch (Exception e){
+            return MyRespMsgEntity.getFailedMsg().put("error",e.getMessage());
+        }
     }
 
     /**
      * 注册或登录接口.如果存在该用户则发送短信，否则自动注册
      *
      * @param phoneNum 电话号码
-     * @return 响应消息
+     * @return 响应消息 my resp msg entity
      */
     @RequestMapping(value = "/RegOrLogin/{phoneNum}")
     @ResponseBody
     public MyRespMsgEntity register(@PathVariable("phoneNum") String phoneNum) {
-        return userService.userRegiterOrLogin(phoneNum);
+        try {
+            return userService.userRegiterOrLogin(phoneNum);
+        }catch (Exception e){
+            return MyRespMsgEntity.getFailedMsg().put("error",e.getMessage());
+        }
+    }
+
+    /**
+     * 更新账户信息
+     *
+     * @return the my resp msg entity
+     */
+    @RequestMapping(value = "/update")
+    @ResponseBody
+    public MyRespMsgEntity update(){
+        //TODO：更新账户信息
+        return null;
     }
 }

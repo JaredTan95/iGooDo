@@ -1,7 +1,6 @@
 package cn.tanjianff.igoodo.api.http.v1;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
+import cn.tanjianff.igoodo.api.http.MyRespMsgEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -13,9 +12,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping(value = "/api/v1/WaterDis")
 public class WaterDispenserController {
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
-
     /**
      * 请求打开饮水机
      *
@@ -23,12 +19,37 @@ public class WaterDispenserController {
      * @param cup       是否需要水杯
      * @param Serialnum 饮水机序列号
      * @param temp      水温
-     * @return 状态
+     * @return 状态 string
      */
     @RequestMapping(value = "/open")
     @ResponseBody
     public String open(String appUserId,int cup,String Serialnum,int temp){
         //TODO:通过TCP向单片机发送消息，打开电子开关.暂时不采用Http，在netty中实现Http请求，通过SocketChannel发送打开饮水机请求
         return "";
+    }
+
+
+    /**
+     * 添加一台饮水机记录信息
+     *
+     * @return MyRespMsgEntity
+     */
+    @RequestMapping(value = "/add")
+    @ResponseBody
+    public MyRespMsgEntity add(){
+        //TODO:添加一台饮水机记录信息
+        return null;
+    }
+
+    /**
+     * 修改饮水机信息
+     *
+     * @return MyRespMsgEntity
+     */
+    @RequestMapping(value = "/update")
+    @ResponseBody
+    public MyRespMsgEntity update(){
+        //TODO：修改饮水机信息
+        return null;
     }
 }

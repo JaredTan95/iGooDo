@@ -1,6 +1,7 @@
 package cn.tanjianff.igoodo.api.http.service.user.impl;
 
 import cn.tanjianff.igoodo.api.http.MyRespMsgEntity;
+import cn.tanjianff.igoodo.api.http.service.plugin.PluginsService;
 import cn.tanjianff.igoodo.api.http.service.user.UserService;
 import cn.tanjianff.igoodo.common.db.domain.IgdUser;
 import cn.tanjianff.igoodo.common.db.domain.IgdUserInformation;
@@ -24,6 +25,13 @@ public class UserServiceImpl implements UserService {
     private JdbcUserRepository jdbcUserRepository;
     private JdbcUserInfoRepository jdbcUserInfoRepository;
 
+    private PluginsService pluginsService;
+
+    @Autowired
+    public void setPluginsService(PluginsService pluginsService) {
+        this.pluginsService = pluginsService;
+    }
+
     @Autowired
     public void setJdbcUserRepository(JdbcUserRepository jdbcUserRepository) {
         this.jdbcUserRepository = jdbcUserRepository;
@@ -38,7 +46,9 @@ public class UserServiceImpl implements UserService {
     public MyRespMsgEntity getMyInfo(String id) {
         try {
             IgdUser user = jdbcUserRepository.findById(id);
-            return user != null ? MyRespMsgEntity.getSuccessMsg().put("user", user)
+            IgdUserInformation userInfo = jdbcUserInfoRepository.findById(id);
+            return user != null && userInfo != null ? MyRespMsgEntity.getSuccessMsg()
+                    .put("userBase", user).put("userExt", userInfo)
                     : MyRespMsgEntity.getSuccessMsg().put("error", "再确认一下信息是否正确吧～");
         } catch (Exception e) {
             return MyRespMsgEntity.getFailedMsg().put("error", "服务器处理出错了,你看异常--->" + e.getMessage());
@@ -46,21 +56,33 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public MyRespMsgEntity getMyBaseInfo(String id) {
+        try {
+            IgdUser user = jdbcUserRepository.findById(id);
+            return user != null ? MyRespMsgEntity.getSuccessMsg().put("user", user)
+                    : MyRespMsgEntity.getSuccessMsg().put("error", "再确认一下信息是否正确吧～");
+        } catch (Exception e) {
+            return MyRespMsgEntity.getFailedMsg().put("error", "服务器处理出错了,你看异常--->" + e.getMessage());
+        }
+    }
+
+
+    @Override
     public MyRespMsgEntity userRegiterOrLogin(String phoneNum) {
         try {
-            if (RegexUtils.isPhoneNumber(phoneNum)) {
+            if (RegexUtils.isChinaPhoneLegal(phoneNum)) {
                 boolean isExists = jdbcUserRepository.isExists(phoneNum);
                 if (isExists) {
-                    return MyRespMsgEntity.getSuccessMsg();
+                    return MyRespMsgEntity.getSuccessMsg().put("phoneNum", phoneNum);
                 } else {
                     IgdUser user = new IgdUser();
                     user.setUser_phone(phoneNum);
                     user.setUser_regdate(new Date(System.currentTimeMillis()));
                     user.setUser_credit(100L);
+                    user.setUpdate_time(new Timestamp(System.currentTimeMillis()));
                     IgdUserInformation userInformation = new IgdUserInformation();
                     userInformation.setUserPhone(Double.parseDouble(phoneNum));
-                    userInformation.setUpdateTime(Timestamp.valueOf(String.valueOf(new Date(System.currentTimeMillis()))));
-                    //TODO:待完善，创建事务，同时创建用户表和用户信息表的记录
+                    userInformation.setUpdateTime(new Timestamp(System.currentTimeMillis()));
                     if (jdbcUserRepository.save(user) && jdbcUserInfoRepository.save(userInformation)) {
                         return MyRespMsgEntity.getSuccessMsg().put("user", user);
                     } else {
@@ -71,6 +93,38 @@ public class UserServiceImpl implements UserService {
                 return MyRespMsgEntity.getFailedMsg().put("error", phoneNum + " is not a tellphone number!");
             }
         } catch (Exception e) {
+            e.printStackTrace();
+            return MyRespMsgEntity.getFailedMsg().put("error", "异常：" + e.getMessage());
+        }
+    }
+
+    @Override
+    public MyRespMsgEntity userRegiterOrLogin2(String phoneNum) {
+        try {
+            if (RegexUtils.isChinaPhoneLegal(phoneNum)) {
+                boolean isExists = jdbcUserRepository.isExists(phoneNum);
+                if (isExists) {
+                    return MyRespMsgEntity.getSuccessMsg().put("getSmsMsg", pluginsService.getSmsCode(phoneNum));
+                } else {
+                    IgdUser user = new IgdUser();
+                    user.setUser_phone(phoneNum);
+                    user.setUser_regdate(new Date(System.currentTimeMillis()));
+                    user.setUser_credit(100L);
+                    user.setUpdate_time(new Timestamp(System.currentTimeMillis()));
+                    IgdUserInformation userInformation = new IgdUserInformation();
+                    userInformation.setUserPhone(Double.parseDouble(phoneNum));
+                    userInformation.setUpdateTime(new Timestamp(System.currentTimeMillis()));
+                    if (jdbcUserRepository.save(user) && jdbcUserInfoRepository.save(userInformation)) {
+                        return MyRespMsgEntity.getSuccessMsg().put("user", user).put("getSmsMsg", pluginsService.getSmsCode(phoneNum));
+                    } else {
+                        return MyRespMsgEntity.getSuccessMsg().put("error", "Registration failed!");
+                    }
+                }
+            } else {
+                return MyRespMsgEntity.getFailedMsg().put("error", phoneNum + " is not a tellphone number!");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
             return MyRespMsgEntity.getFailedMsg().put("error", "异常：" + e.getMessage());
         }
     }
@@ -78,8 +132,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public MyRespMsgEntity getExtInfo(String phonNum) {
         try {
-            if (RegexUtils.isPhoneNumber(phonNum)) {
-                return MyRespMsgEntity.getSuccessMsg().put("userInfo", jdbcUserInfoRepository.findById(phonNum));
+            if (RegexUtils.isChinaPhoneLegal(phonNum)) {
+                return MyRespMsgEntity.getSuccessMsg().put("userExt", jdbcUserInfoRepository.findById(phonNum));
             } else {
                 return MyRespMsgEntity.getSuccessMsg().put("error", phonNum + " is not a tellphone number!");
             }
