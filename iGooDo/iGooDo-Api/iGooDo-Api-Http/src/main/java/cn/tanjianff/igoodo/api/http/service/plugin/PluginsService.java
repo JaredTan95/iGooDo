@@ -8,4 +8,6 @@ import cn.tanjianff.igoodo.api.http.MyRespMsgEntity;
  */
 public interface PluginsService {
     MyRespMsgEntity getSmsCode(String phoneNum);
+
+    MyRespMsgEntity getQiNiuYunToken();
 }

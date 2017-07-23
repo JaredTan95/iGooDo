@@ -52,6 +52,7 @@
           <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpasyncclient-cache:4.1.2" />
           <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpclient-cache:4.5.2" />
           <element id="library" level="project" name="Maven: com.google.zxing:core:3.3.0" />
+          <element id="library" level="project" name="Maven: com.qiniu:qiniu-java-sdk:7.2.7" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="iGooDo-Api-Http/web/Web" />

@@ -1,5 +1,6 @@
 package cn.tanjianff.igoodo.api.http.v1;
 
+import cn.tanjianff.igoodo.api.http.service.plugin.PluginsService;
 import cn.tanjianff.igoodo.common.db.repository.JdbcRepository.JdbcUserRepository;
 import cn.tanjianff.igoodo.common.util.CaptchaUtil;
 import cn.tanjianff.igoodo.common.util.QRCodeUtil;
@@ -30,6 +31,13 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 public class Api4HttpController {
     @Autowired
     private JdbcTemplate jdbcTemplate;
+
+    private PluginsService pluginsService;
+
+    @Autowired
+    public void setPluginsService(PluginsService pluginsService) {
+        this.pluginsService = pluginsService;
+    }
 
     public Api4HttpController(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
@@ -128,5 +136,12 @@ public class Api4HttpController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @RequestMapping(value = "/qiNiuYunToken")
+    @ResponseBody
+    public String getQiNiuYunToken(){
+        pluginsService.getQiNiuYunToken();
+        return null;
     }
 }

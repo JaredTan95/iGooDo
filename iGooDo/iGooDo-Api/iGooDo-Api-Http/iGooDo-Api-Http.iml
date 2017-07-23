@@ -40,5 +40,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="Maven: org.springframework:spring-tx:4.3.4.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Maven: com.qiniu:qiniu-java-sdk:7.2.7" level="project" />
   </component>
 </module>

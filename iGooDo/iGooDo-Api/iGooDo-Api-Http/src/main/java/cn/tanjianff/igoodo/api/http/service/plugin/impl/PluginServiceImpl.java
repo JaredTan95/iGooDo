@@ -5,6 +5,7 @@ import cn.tanjianff.igoodo.api.http.service.plugin.PluginsService;
 import cn.tanjianff.igoodo.common.db.repository.JdbcRepository.JdbcUserRepository;
 import cn.tanjianff.igoodo.common.util.RandomUtils;
 import cn.tanjianff.igoodo.common.util.yunpianSmsUtil;
+import com.qiniu.util.Auth;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
@@ -44,5 +45,16 @@ public class PluginServiceImpl implements PluginsService {
             e.printStackTrace();
             return MyRespMsgEntity.getFailedMsg().put("error",e.getMessage());
         }
+    }
+
+    @Override
+    public MyRespMsgEntity getQiNiuYunToken() {
+        String accessKey = "5c8XqP_Hene9ZnSCs6_akY6U0E-FBW84s1cQoVLf";
+        String secretKey = "7Yb7n4i8BMFgzZ2SgiC8-JXUpPpr3QfxM0i1HUnz";
+        String bucket = "igoodo-icon";
+        Auth auth = Auth.create(accessKey, secretKey);
+        String upToken = auth.uploadToken(bucket);
+        System.out.println("QiNiuYun Token:"+upToken);
+        return null;
     }
 }
