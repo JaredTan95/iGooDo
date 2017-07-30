@@ -75,7 +75,7 @@ public class HttpServerInboundHandler extends ChannelInboundHandlerAdapter {
                     sendSomething(ctx, "{\"code\":\"0000\"}");
                 } catch (Exception e) {
                     e.printStackTrace();
-                    sendSomething(ctx, "{\"code\":\"1111\"}");
+                    sendSomething(ctx, "{\"code\":\"1111\"");
                 }
             }
         }
