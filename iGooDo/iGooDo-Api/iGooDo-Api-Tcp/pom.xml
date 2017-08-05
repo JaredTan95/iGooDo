@@ -20,7 +20,7 @@
         <dependency>
             <groupId>cn.tanjianff</groupId>
             <artifactId>iGooDo-Api-Common</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 

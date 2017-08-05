@@ -72,34 +72,31 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="@iGooDo" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="iGooDo" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="IGD_USER" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="iGooDo" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BootstrapServerHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Tcp/src/main/java/cn/tanjianff/igoodo/api/tcp/BootstrapServerHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="78" column="16" lean-forward="false" selection-start-line="78" selection-start-column="16" selection-end-line="78" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HttpServerInboundHandler.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Tcp/src/main/java/cn/tanjianff/igoodo/api/tcp/httpServer/HttpServerInboundHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -130,28 +127,18 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Tcp/src/main/java/cn/tanjianff/igoodo/api/tcp/ClientTcpSocketChannelMap.java" />
-        <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Tcp/src/main/java/cn/tanjianff/igoodo/api/tcp/httpServer/TestHttpServerinboundHandler.java" />
-        <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Tcp/src/test/java/RepositoryTest/UserRepositoryTest.java" />
-        <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Tcp/src/main/java/cn/tanjianff/igoodo/api/tcp/BootstrapSpringContainer.java" />
-        <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/src/main/java/cn/tanjianff/igoodo/api/http/MyResponseEntity.java" />
-        <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/main/java/cn/tanjianff/igoodo/common/db/domain/IgdUser.java" />
-        <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/src/main/java/cn/tanjianff/igoodo/api/http/MyRespMsgEntity.java" />
-        <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/src/main/java/cn/tanjianff/igoodo/api/http/UserService.java" />
         <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/src/main/java/cn/tanjianff/igoodo/api/http/service/UserService.java" />
         <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/test/java/test.java" />
         <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/main/java/cn/tanjianff/igoodo/common/db/repository/UserRepository.java" />
         <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/main/java/cn/tanjianff/igoodo/common/db/repository/JdbcRepository/JdbcUserInfoRepository.java" />
         <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/main/java/cn/tanjianff/igoodo/common/db/repository/UserInfoRepository.java" />
         <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Tcp/src/main/resources/Server-Context.xml" />
-        <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/src/main/webapp/WEB-INF/applicationContext.xml" />
         <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/test/java/TestJdbcUserRepository.java" />
         <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/main/java/cn/tanjianff/igoodo/common/util/CRequest.java" />
         <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Tcp/src/main/java/cn/tanjianff/igoodo/api/tcp/httpServer/HttpRequestParser.java" />
         <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/src/test/cn/tanjianff/igoodo/api/http/test/UserControllerTest.java" />
         <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/src/test/cn/tanjianff/igoodo/api/http/test/UserServiceTest.java" />
         <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/test/java/cn/tanjianff/igoodo/common/util/test/RegexUtilsTest.java" />
-        <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/main/java/cn/tanjianff/igoodo/common/db/repository/JdbcRepository/JdbcUserRepository.java" />
         <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/main/java/cn/tanjianff/igoodo/common/util/RegexUtils.java" />
         <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/src/main/java/cn/tanjianff/igoodo/api/http/service/user/UtilService.java" />
         <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/src/main/java/cn/tanjianff/igoodo/api/http/service/user/PluginsService.java" />
@@ -160,7 +147,6 @@
         <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/src/main/java/cn/tanjianff/igoodo/api/http/service/waterDis/impl/WaterDispenserServiceImpl.java" />
         <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/src/main/java/cn/tanjianff/igoodo/api/http/service/waterDis/WaterDispenserService.java" />
         <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/src/main/java/cn/tanjianff/igoodo/api/http/v1/WaterDispenserController.java" />
-        <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/src/main/java/cn/tanjianff/igoodo/api/http/v1/UserController.java" />
         <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/src/main/java/cn/tanjianff/igoodo/api/http/service/plugin/PluginsService.java" />
         <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/src/main/java/cn/tanjianff/igoodo/api/http/v1/Api4HttpController.java" />
         <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/pom.xml" />
@@ -175,12 +161,23 @@
         <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/main/java/cn/tanjianff/igoodo/common/db/BaseDao.java" />
         <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/main/java/cn/tanjianff/igoodo/common/db/BaseDaoImpl.java" />
         <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/main/java/cn/tanjianff/igoodo/common/db/JdbcBaseDao.java" />
-        <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/main/java/cn/tanjianff/igoodo/common/db/JdbcBaseDaoImpl.java" />
         <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/main/java/cn/tanjianff/igoodo/common/db/domain/IGD_WATER_PRICE.java" />
         <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/test/java/JdbcBaseDaoImplTest.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/855bf51f-ac7a-4834-95e5-adf3a9fbfb47/console.sql" />
         <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Tcp/src/main/java/cn/tanjianff/igoodo/api/tcp/BootstrapServerHandler.java" />
         <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Tcp/src/main/java/cn/tanjianff/igoodo/api/tcp/httpServer/HttpServerInboundHandler.java" />
+        <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/pom.xml" />
+        <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Tcp/pom.xml" />
+        <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/main/java/cn/tanjianff/igoodo/common/db/repository/UserBaseDaoImpl.java" />
+        <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/test/java/cn/tanjianff/igoodo/common/util/test/UserBaseDaoImplTest.java" />
+        <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/main/java/cn/tanjianff/igoodo/common/db/JdbcBaseDaoImpl.java" />
+        <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/test/java/UserBaseDaoImplTest.java" />
+        <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/main/java/cn/tanjianff/igoodo/common/db/repository/JdbcBaseDao.java" />
+        <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/src/main/webapp/WEB-INF/applicationContext.xml" />
+        <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/main/java/cn/tanjianff/igoodo/common/db/repository/JdbcRepository/JdbcUserRepository.java" />
+        <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/main/java/cn/tanjianff/igoodo/common/db/repository/JdbcRepository/UserBaseDaoImpl.java" />
+        <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/main/java/cn/tanjianff/igoodo/common/db/repository/JdbcRepository/JdbcBaseDaoImpl.java" />
+        <option value="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/src/main/java/cn/tanjianff/igoodo/api/http/v1/UserController.java" />
       </list>
     </option>
   </component>
@@ -206,6 +203,30 @@
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="iGooDo-Api-Tcp" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="iGooDo-Api-Tcp" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Lifecycle" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$LifecycleNode" />
+        </PATH_ELEMENT>
+      </PATH>
       <PATH>
         <PATH_ELEMENT>
           <option name="myItemId" value="" />
@@ -256,6 +277,34 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="iGooDo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="iGooDo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="iGooDo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="iGooDo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="iGooDo-Api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="PackagesPane">
         <subPane>
           <PATH>
@@ -270,6 +319,20 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="Libraries" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewLibrariesNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="iGooDo-Api">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -318,53 +381,11 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="iGooDo-Api">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="iGooDo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="iGooDo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="iGooDo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="iGooDo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="iGooDo-Api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="copyright" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.20416667" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -380,18 +401,9 @@
     <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/src/main/webapp" />
-      <recent name="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/src/main/webapp/WEB-INF" />
-      <recent name="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/src/main/resources" />
-      <recent name="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http-Web/src/main/webapp/WEB-INF" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
       <recent name="cn.tanjianff.igoodo" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/src/test" />
@@ -399,6 +411,15 @@
       <recent name="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/src/main/webapp" />
       <recent name="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/src/main/webapp/WEB-INF" />
       <recent name="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/src/main/java/cn/tanjianff/igoodo/api/http" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/src/main/webapp" />
+      <recent name="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/src/main/webapp/WEB-INF" />
+      <recent name="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/src/main/resources" />
+      <recent name="$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http-Web/src/main/webapp/WEB-INF" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -413,27 +434,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.JdbcBaseDaoImplTest.insert">
-    <configuration default="false" name="BootstrapSpringContainer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="cn.tanjianff.igoodo.api.tcp.httpServer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="cn.tanjianff.igoodo.api.tcp.BootstrapSpringContainer" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="iGooDo-Api-Tcp" />
-      <envs />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 7">
     <configuration default="false" name="UserServiceTest.userRegiterOrLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -463,7 +464,7 @@
     <configuration default="false" name="RegexUtilsTest.isPhoneNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="cn.tanjianff.igoodo.common.util.test.*" />
+          <option name="PATTERN" value=".*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -489,7 +490,7 @@
     <configuration default="false" name="RegexUtilsTest.isChinaPhoneLegal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="cn.tanjianff.igoodo.common.util.test.*" />
+          <option name="PATTERN" value=".*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -520,6 +521,27 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="JdbcBaseDaoImplTest" />
       <option name="METHOD_NAME" value="insert" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="UserBaseDaoImplTest.findOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="iGooDo-Api-Common" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UserBaseDaoImplTest" />
+      <option name="METHOD_NAME" value="findOne" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1024,19 +1046,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.Tomcat 7" />
-      <item index="1" class="java.lang.String" itemvalue="Application.BootstrapSpringContainer" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.UserServiceTest.userRegiterOrLogin" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.RegexUtilsTest.isPhoneNumber" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.RegexUtilsTest.isChinaPhoneLegal" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.JdbcBaseDaoImplTest.insert" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.UserServiceTest.userRegiterOrLogin" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.RegexUtilsTest.isPhoneNumber" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.RegexUtilsTest.isChinaPhoneLegal" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.JdbcBaseDaoImplTest.insert" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.UserBaseDaoImplTest.findOne" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.JdbcBaseDaoImplTest.insert" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.RegexUtilsTest.isChinaPhoneLegal" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.RegexUtilsTest.isPhoneNumber" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.UserServiceTest.userRegiterOrLogin" />
-        <item index="4" class="java.lang.String" itemvalue="Application.BootstrapSpringContainer" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.UserBaseDaoImplTest.findOne" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.JdbcBaseDaoImplTest.insert" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.RegexUtilsTest.isChinaPhoneLegal" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.RegexUtilsTest.isPhoneNumber" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.UserServiceTest.userRegiterOrLogin" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
@@ -1123,27 +1145,28 @@
       <workItem from="1500816822360" duration="723000" />
       <workItem from="1500852761581" duration="1162000" />
       <workItem from="1501454354918" duration="1618000" />
+      <workItem from="1501893154551" duration="4077000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="JdbcBaseDaoImplTest_insert - 2017.07.31 at 06h 50m 50s.xml">
-      <configuration name="JdbcBaseDaoImplTest.insert" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="JdbcBaseDaoImplTest_insert - 2017.07.31 at 06h 51m 39s.xml">
-      <configuration name="JdbcBaseDaoImplTest.insert" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="JdbcBaseDaoImplTest_insert - 2017.07.31 at 06h 53m 26s.xml">
-      <configuration name="JdbcBaseDaoImplTest.insert" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestJdbcUserRepository_save - 2017.06.18 at 01h 38m 02s.xml">
-      <configuration name="TestJdbcUserRepository.save" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestJdbcUserRepository_save - 2017.06.18 at 01h 53m 01s.xml">
-      <configuration name="TestJdbcUserRepository.save" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TestJdbcUserRepository_save - 2017.06.18 at 01h 53m 41s.xml">
       <configuration name="TestJdbcUserRepository.save" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserBaseDaoImplTest_findOne - 2017.08.05 at 09h 15m 36s.xml">
+      <configuration name="UserBaseDaoImplTest.findOne" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserBaseDaoImplTest_findOne - 2017.08.05 at 09h 18m 10s.xml">
+      <configuration name="UserBaseDaoImplTest.findOne" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserBaseDaoImplTest_findOne - 2017.08.05 at 09h 19m 22s.xml">
+      <configuration name="UserBaseDaoImplTest.findOne" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserBaseDaoImplTest_findOne - 2017.08.05 at 09h 23m 15s.xml">
+      <configuration name="UserBaseDaoImplTest.findOne" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserBaseDaoImplTest_findOne - 2017.08.05 at 09h 29m 16s.xml">
+      <configuration name="UserBaseDaoImplTest.findOne" configurationId="JUnit" />
     </history-entry>
     <history-entry file="UserServiceTest_userRegiterOrLogin - 2017.07.16 at 20h 04m 48s.xml">
       <configuration name="UserServiceTest.userRegiterOrLogin" configurationId="JUnit" />
@@ -1159,7 +1182,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="202248000" />
+    <option name="totallyTimeSpent" value="206325000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1179,14 +1202,13 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5027397" sideWeight="0.51615506" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4671233" sideWeight="0.4838449" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.60273975" sideWeight="0.49676898" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2835218" sideWeight="0.49452055" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28756058" sideWeight="0.49452055" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24071082" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1198,6 +1220,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3260274" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -1246,62 +1269,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Tcp/src/main/java/cn/tanjianff/igoodo/api/tcp/HeartBeatServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Tcp/src/main/java/cn/tanjianff/igoodo/api/tcp/BootstrapServerInitializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Tcp/src/main/java/cn/tanjianff/igoodo/api/tcp/BootstrapSpringContainer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Tcp/src/main/java/cn/tanjianff/igoodo/api/tcp/ClientTcpSocketChannelMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="27" column="11" lean-forward="false" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Tcp/src/main/java/cn/tanjianff/igoodo/api/tcp/httpServer/HttpServerInitializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="52" column="45" lean-forward="false" selection-start-line="52" selection-start-column="45" selection-end-line="52" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Tcp/src/main/java/cn/tanjianff/igoodo/api/tcp/httpServer/HttpRequestParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="54" column="23" lean-forward="false" selection-start-line="54" selection-start-column="15" selection-end-line="54" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Tcp/src/main/java/cn/tanjianff/igoodo/api/tcp/BootstrapServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="28" column="14" lean-forward="false" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/src/test/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-355">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/main/java/cn/tanjianff/igoodo/common/db/domain/IgdUserInformation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1313,13 +1280,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="35" lean-forward="false" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/main/java/cn/tanjianff/igoodo/common/db/repository/JdbcRepository/JdbcUserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="32" column="77" lean-forward="false" selection-start-line="32" selection-start-column="69" selection-end-line="32" selection-end-column="77" />
         </state>
       </provider>
     </entry>
@@ -1344,22 +1304,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/src/main/java/cn/tanjianff/igoodo/api/http/service/user/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="35" column="21" lean-forward="false" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/da44c18f/855bf51f-ac7a-4834-95e5-adf3a9fbfb47/iGooDo.IGD_USER_INFORMATION">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -1384,13 +1337,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/src/main/java/cn/tanjianff/igoodo/api/http/v1/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="556">
-          <caret line="102" column="21" lean-forward="false" selection-start-line="102" selection-start-column="21" selection-end-line="102" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/src/main/java/cn/tanjianff/igoodo/api/http/HomeController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -1402,21 +1348,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="5" column="20" lean-forward="false" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/iGooDo-Api/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1448,25 +1379,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="154" column="20" lean-forward="false" selection-start-line="154" selection-start-column="20" selection-end-line="154" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/src/main/java/cn/tanjianff/igoodo/api/http/service/plugin/impl/PluginServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="239">
           <caret line="32" column="23" lean-forward="true" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/src/main/java/cn/tanjianff/igoodo/api/http/service/user/impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1478,18 +1394,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/main/java/cn/tanjianff/igoodo/common/BaseDaoImpl.java" />
-    <entry file="dbDummy://dbtable:/da44c18f/855bf51f-ac7a-4834-95e5-adf3a9fbfb47/iGooDo.IGD_USER">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/main/java/cn/tanjianff/igoodo/common/db/Page.java" />
     <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/test/java/SuperDaoTest.java" />
     <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/main/java/cn/tanjianff/igoodo/common/db/domain/IgdRefundApplication.java">
@@ -1503,14 +1407,6 @@
     <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/main/java/cn/tanjianff/igoodo/common/db/SuperDao.java" />
     <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/main/java/cn/tanjianff/igoodo/common/db/BaseDao.java" />
     <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/main/java/cn/tanjianff/igoodo/common/db/BaseDaoImpl.java" />
-    <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/test/java/TestJdbcUserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="15" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/main/java/cn/tanjianff/igoodo/common/db/domain/IgdWaterPrice.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1524,21 +1420,21 @@
         <state relative-caret-position="300">
           <caret line="20" column="33" lean-forward="false" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
           <folding>
-            <element signature="e#620#621#0" expanded="true" />
-            <element signature="e#668#669#0" expanded="true" />
-            <element signature="e#708#709#0" expanded="true" />
-            <element signature="e#749#750#0" expanded="true" />
-            <element signature="e#786#787#0" expanded="true" />
-            <element signature="e#846#847#0" expanded="true" />
-            <element signature="e#898#899#0" expanded="true" />
-            <element signature="e#934#935#0" expanded="true" />
-            <element signature="e#968#969#0" expanded="true" />
-            <element signature="e#1020#1021#0" expanded="true" />
-            <element signature="e#1066#1067#0" expanded="true" />
-            <element signature="e#1107#1108#0" expanded="true" />
-            <element signature="e#1141#1142#0" expanded="true" />
-            <element signature="e#1198#1199#0" expanded="true" />
-            <element signature="e#1244#1245#0" expanded="true" />
+            <element signature="e#620#621#0" expanded="false" />
+            <element signature="e#668#669#0" expanded="false" />
+            <element signature="e#708#709#0" expanded="false" />
+            <element signature="e#749#750#0" expanded="false" />
+            <element signature="e#786#787#0" expanded="false" />
+            <element signature="e#846#847#0" expanded="false" />
+            <element signature="e#898#899#0" expanded="false" />
+            <element signature="e#934#935#0" expanded="false" />
+            <element signature="e#968#969#0" expanded="false" />
+            <element signature="e#1020#1021#0" expanded="false" />
+            <element signature="e#1066#1067#0" expanded="false" />
+            <element signature="e#1107#1108#0" expanded="false" />
+            <element signature="e#1141#1142#0" expanded="false" />
+            <element signature="e#1198#1199#0" expanded="false" />
+            <element signature="e#1244#1245#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1547,51 +1443,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/main/java/cn/tanjianff/igoodo/common/db/JdbcBaseDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="31" column="11" lean-forward="false" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
-          <folding>
-            <element signature="e#989#1019#0" expanded="true" />
-            <element signature="e#2724#2734#0" expanded="true" />
-            <element signature="e#4087#4097#0" expanded="true" />
-            <marker date="1500854625000" expanded="true" signature="2344:2402" ph="DELETE FROM " />
-            <marker date="1500854625000" expanded="true" signature="5500:5560" ph="SELECT * FRO... missingValue" />
-            <marker date="1500854625000" expanded="true" signature="5780:5794" ph="SELECT * FRO... missingValue" />
-            <marker date="1500854625000" expanded="true" signature="13301:13364" ph="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/main/java/cn/tanjianff/igoodo/common/db/JdbcBaseDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="36" column="49" lean-forward="false" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/test/java/JdbcBaseDaoImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#511#512#0" expanded="true" />
-            <element signature="e#606#607#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/test/java/JdbcConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1603,18 +1454,226 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/test/java/JdbcBaseDaoImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Tcp/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="23" column="21" lean-forward="false" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Tcp/src/main/java/cn/tanjianff/igoodo/api/tcp/BootstrapServerHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="78" column="16" lean-forward="false" selection-start-line="78" selection-start-column="16" selection-end-line="78" selection-end-column="16" />
+        <state relative-caret-position="138">
+          <caret line="83" column="45" lean-forward="false" selection-start-line="83" selection-start-column="45" selection-end-line="83" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="18" lean-forward="false" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="18" lean-forward="false" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/iGooDo-Api/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="24" lean-forward="false" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Tcp/src/main/java/cn/tanjianff/igoodo/api/tcp/httpServer/HttpServerInboundHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+        <state relative-caret-position="720">
+          <caret line="71" column="32" lean-forward="false" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/da44c18f/855bf51f-ac7a-4834-95e5-adf3a9fbfb47/iGooDo.IGD_USER">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/main/java/cn/tanjianff/igoodo/common/db/repository/JdbcRepository/JdbcRefundApplicationRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <marker date="1498129081000" expanded="true" signature="587:721" ph="INSERT INTO IGD_REFUND_APPLICATION... " />
+            <marker date="1498129081000" expanded="true" signature="764:857" ph="UPDATE IGD_R... " />
+            <marker date="1498129081000" expanded="true" signature="902:955" ph="SELECT * FRO... IGD_REFUND_APPLICATION" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/test/java/JdbcConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="35" column="3" lean-forward="true" selection-start-line="35" selection-start-column="3" selection-end-line="35" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/test/java/TestJdbcUserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/test/java/UserBaseDaoImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#477#478#0" expanded="true" />
+            <element signature="e#538#539#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/src/main/resources/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/src/main/webapp/WEB-INF/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="68" column="29" lean-forward="false" selection-start-line="68" selection-start-column="14" selection-end-line="68" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Tcp/src/main/resources/Server-Context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="40" column="4" lean-forward="false" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/main/java/cn/tanjianff/igoodo/common/db/repository/JdbcRepository/JdbcUserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="23" column="31" lean-forward="false" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+          <folding>
+            <marker date="1501897307000" expanded="true" signature="942:1244" ph="INSERT INTO iGooDo.IGD_USER... " />
+            <marker date="1501897307000" expanded="true" signature="1294:1479" ph="UPDATE IGD_U... " />
+            <marker date="1501897307000" expanded="true" signature="1534:1813" ph="SELECT USER_... IGD_USER" />
+            <marker date="1501897307000" expanded="true" signature="1861:1910" ph="SELECT COUNT... IGD_USER" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/main/java/cn/tanjianff/igoodo/common/db/repository/JdbcRepository/UserBaseDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="46" lean-forward="false" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#485#486#0" expanded="true" />
+            <element signature="e#540#541#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/main/java/cn/tanjianff/igoodo/common/db/repository/JdbcRepository/JdbcBaseDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="152" column="0" lean-forward="false" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
+          <folding>
+            <element signature="method#save#0;class#JdbcBaseDaoImpl#0" expanded="false" />
+            <element signature="method#update#0;class#JdbcBaseDaoImpl#0" expanded="false" />
+            <element signature="method#delete#0;class#JdbcBaseDaoImpl#0" expanded="false" />
+            <element signature="method#deleteAll#0;class#JdbcBaseDaoImpl#0" expanded="false" />
+            <element signature="method#delete#1;class#JdbcBaseDaoImpl#0" expanded="false" />
+            <element signature="method#batchSave#0;class#JdbcBaseDaoImpl#0" expanded="false" />
+            <element signature="method#batchUpdate#0;class#JdbcBaseDaoImpl#0" expanded="false" />
+            <element signature="method#makeSql#0;class#JdbcBaseDaoImpl#0" expanded="false" />
+            <element signature="method#setArgs#0;class#JdbcBaseDaoImpl#0" expanded="false" />
+            <element signature="method#setArgTypes#0;class#JdbcBaseDaoImpl#0" expanded="false" />
+            <marker date="1501897444000" expanded="true" signature="2389:2447" ph="DELETE FROM " />
+            <marker date="1501897444000" expanded="true" signature="5545:5605" ph="SELECT * FRO... missingValue" />
+            <marker date="1501897444000" expanded="true" signature="5825:5839" ph="SELECT * FRO... missingValue" />
+            <marker date="1501897444000" expanded="true" signature="13346:13409" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/main/java/cn/tanjianff/igoodo/common/db/repository/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Common/src/main/java/cn/tanjianff/igoodo/common/db/repository/JdbcBaseDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/src/main/java/cn/tanjianff/igoodo/api/http/service/user/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="24" column="25" lean-forward="false" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+          <folding>
+            <element signature="method#userRegiterOrLogin2#0;class#UserServiceImpl#0" expanded="false" />
+            <element signature="method#getExtInfo#0;class#UserServiceImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/src/main/java/cn/tanjianff/igoodo/api/http/service/user/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-337">
+          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/iGooDo-Api/iGooDo-Api-Http/src/main/java/cn/tanjianff/igoodo/api/http/v1/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="104" column="5" lean-forward="false" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1686,7 +1745,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>iGooDo-Api-Http</last-edited>
+          <last-edited>iGooDo-Api-Tcp</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

@@ -15,6 +15,7 @@
     <mvc:annotation-driven/>
     <context:component-scan base-package="cn.tanjianff.igoodo.api.http"/>
     <context:component-scan base-package="cn.tanjianff.igoodo.api.http.service"/>
+    <context:component-scan base-package="cn.tanjianff.igoodo.common.db.repository" />
     <!-- 对模型视图名称的解析，在请求时模型视图名称添加前后缀 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/"/>
@@ -63,5 +64,9 @@
 
     <bean id="jdbcUserRepository" class="cn.tanjianff.igoodo.common.db.repository.JdbcRepository.JdbcUserRepository">
         <constructor-arg ref="jdbcTemplate"/>
+    </bean>
+
+    <bean id="userBaseDaoImpl" class="cn.tanjianff.igoodo.common.db.repository.JdbcRepository.UserBaseDaoImpl">
+        <property name="jdbcTemplate" ref="jdbcTemplate"/>
     </bean>
 </beans>

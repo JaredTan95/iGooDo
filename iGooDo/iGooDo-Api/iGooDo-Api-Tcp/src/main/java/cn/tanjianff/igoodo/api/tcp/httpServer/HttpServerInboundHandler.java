@@ -40,14 +40,14 @@ public class HttpServerInboundHandler extends ChannelInboundHandlerAdapter {
         Map<String, String> parmMap = new HttpRequestParser((FullHttpRequest) msg).parse(); // 将GET, POST所有请求参数转换成Map对象
 
         //TODO:请求分发待完善
-      if (msg instanceof HttpRequest) {
+        if (msg instanceof HttpRequest) {
             HttpRequest request = (HttpRequest) msg;
             URI uri = new URI(request.getUri());
 
-            System.out.println("Uri:" + uri);
-            System.out.println("UriPath:" + uri.getPath());
-            System.out.println("getQuery:" + uri.getQuery());
-            System.out.println("getUserInfo:" + uri.getUserInfo());
+            log.debug("Uri:" + uri);
+            log.debug("UriPath:" + uri.getPath());
+            log.debug("getQuery:" + uri.getQuery());
+            log.debug("getUserInfo:" + uri.getUserInfo());
 
             if (uri.getPath().equals("/favicon.ico")) {
                 sendSomething(ctx, "Your Request Info:" + uri);
@@ -67,11 +67,11 @@ public class HttpServerInboundHandler extends ChannelInboundHandlerAdapter {
             /*对app发送打开请求参数做解析,WDSerialnum*/
             if (uri.getPath().equals("/open")) {
                 try {
-                    System.out.println(parmMap.get("User"));
-                    System.out.println(parmMap.get("WDSerialnum"));
+                    log.debug(parmMap.get("User"));
+                    log.debug(parmMap.get("WDSerialnum"));
                     //TODO:做异常处理
-              ClientTcpSocketChannelMap.getSocketChannel(parmMap.get("WDSerialnum"))
-                        .writeAndFlush("0019OPEN"+parmMap.get("User"));
+                    ClientTcpSocketChannelMap.getSocketChannel(parmMap.get("WDSerialnum"))
+                            .writeAndFlush("0019OPEN" + parmMap.get("User"));
                     sendSomething(ctx, "{\"code\":\"0000\"}");
                 } catch (Exception e) {
                     e.printStackTrace();

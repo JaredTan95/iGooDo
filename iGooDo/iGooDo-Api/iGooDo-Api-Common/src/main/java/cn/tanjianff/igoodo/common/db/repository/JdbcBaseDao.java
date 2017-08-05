@@ -1,4 +1,4 @@
-package cn.tanjianff.igoodo.common.db;
+package cn.tanjianff.igoodo.common.db.repository;
 
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 

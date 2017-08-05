@@ -1,27 +1,27 @@
-package cn.tanjianff.igoodo.common.db;
+package cn.tanjianff.igoodo.common.db.repository.JdbcRepository;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import cn.tanjianff.igoodo.common.db.repository.JdbcBaseDao;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
+import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
 import java.io.Serializable;
 import java.lang.reflect.Field;
-import java.lang.reflect.ParameterizedType;
 import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
+@Component
 public class JdbcBaseDaoImpl<T> implements JdbcBaseDao<T> {
     public static final String SQL_INSERT = "insert";
     public static final String SQL_UPDATE = "update";
     public static final String SQL_DELETE = "delete";
     private JdbcTemplate jdbcTemplate;
 
-    @Autowired
+   // @Autowired
     public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
@@ -30,9 +30,9 @@ public class JdbcBaseDaoImpl<T> implements JdbcBaseDao<T> {
 
     @SuppressWarnings("unchecked")
     public JdbcBaseDaoImpl() {
-        ParameterizedType type = (ParameterizedType) getClass().getGenericSuperclass();
+      /*  ParameterizedType type = (ParameterizedType) getClass().getGenericSuperclass();
         entityClass = (Class<T>) type.getActualTypeArguments()[0];
-        System.out.println("Dao实现类是：" + entityClass.getName());
+        System.out.println("Dao实现类是：" + entityClass.getName());*/
     }
 
     @Override
