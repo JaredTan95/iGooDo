@@ -2,6 +2,9 @@ package cn.tanjianff.igoodo.api.http.v1;
 
 import cn.tanjianff.igoodo.api.http.MyRespMsgEntity;
 import cn.tanjianff.igoodo.api.http.service.user.UserService;
+import cn.tanjianff.igoodo.common.db.domain.IgdUser;
+import cn.tanjianff.igoodo.common.db.domain.IgdUserInformation;
+import cn.tanjianff.igoodo.common.db.repository.UserBaseDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +19,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping(value = "/api/v1/user")
 public class UserController {
     private UserService userService;
+
+    @Autowired
+    private UserBaseDao userBaseDao;
 
     /**
      * Sets user service.
@@ -97,10 +103,20 @@ public class UserController {
      *
      * @return the my resp msg entity
      */
-    @RequestMapping(value = "/update")
+    @RequestMapping(value = "/updateBaseInfo")
     @ResponseBody
-    public MyRespMsgEntity update(){
-        //TODO：更新账户信息
-        return null;
+    public MyRespMsgEntity updateBaseInfo(IgdUser user){
+        return userService.updateMyBaseInfo(user);
+    }
+
+    /**
+     * 更新账户扩展信息
+     *
+     * @return the my resp msg entity
+     */
+    @RequestMapping(value = "/updateExtInfo")
+    @ResponseBody
+    public MyRespMsgEntity updateExtInfo(IgdUserInformation userInfo){
+        return userService.updateMyExtInfo(userInfo);
     }
 }

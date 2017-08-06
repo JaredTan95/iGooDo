@@ -8,6 +8,8 @@ import cn.tanjianff.igoodo.common.db.domain.IgdUserInformation;
 import cn.tanjianff.igoodo.common.db.repository.JdbcRepository.JdbcUserInfoRepository;
 import cn.tanjianff.igoodo.common.db.repository.JdbcRepository.JdbcUserRepository;
 import cn.tanjianff.igoodo.common.util.RegexUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,6 +28,7 @@ public class UserServiceImpl implements UserService {
     private JdbcUserInfoRepository jdbcUserInfoRepository;
 
     private PluginsService pluginsService;
+    private static Log log = LogFactory.getLog(UserServiceImpl.class);
 
     @Autowired
     public void setPluginsService(PluginsService pluginsService) {
@@ -139,6 +142,30 @@ public class UserServiceImpl implements UserService {
             }
         } catch (Exception e) {
             return MyRespMsgEntity.getFailedMsg().put("error", "异常：" + e.getMessage());
+        }
+    }
+
+    @Override
+    public MyRespMsgEntity updateMyBaseInfo(IgdUser user) {
+        try {
+            return jdbcUserRepository.update(user) != null ?
+                    MyRespMsgEntity.getSuccessMsg().put("msg", "更新成功了~").put("user", user)
+                    : MyRespMsgEntity.getFailedMsg().put("msg", "没有更新成功哦~");
+        } catch (Exception e) {
+            log.info("updateMyBaseInfo:" + e.getMessage());
+            return MyRespMsgEntity.getFailedMsg().put("msg", "使用的人太多了,待会儿再试试哦~");
+        }
+    }
+
+    @Override
+    public MyRespMsgEntity updateMyExtInfo(IgdUserInformation userInfo) {
+        try {
+            return jdbcUserInfoRepository.update(userInfo) != null ?
+                    MyRespMsgEntity.getSuccessMsg().put("msg", "更新成功了~").put("userExtInfo", userInfo)
+                    : MyRespMsgEntity.getFailedMsg().put("msg", "没有更新成功哦~");
+        } catch (Exception e) {
+            log.info("updateMyExtInfo:" + e.getMessage());
+            return MyRespMsgEntity.getFailedMsg().put("msg", "使用的人太多了,待会儿再试试哦~");
         }
     }
 }

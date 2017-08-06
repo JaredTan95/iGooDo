@@ -28,8 +28,8 @@ public class JdbcUserRepository implements UserRepository {
             " USER_reserved_field_01, USER_reserved_field_02, USER_reserved_field_03, update_time) " +
             "VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
     private static final String UPDATE_USER = "UPDATE IGD_USER SET USER_pwd=?, USER_sex=?,USER_nickname=?," +
-            " USER_regdate=?, USER_icon=? USER_alipay_account=?, USER_credit=?" +
-            "WHERE IGD_USER.USER_phone=?";
+            "USER_icon=?,USER_alipay_account=?, USER_credit=?" +
+            " WHERE IGD_USER.USER_phone=?";
     private static final String SELECT_BASE_USER = "SELECT USER_phone, USER_pwd, USER_sex," +
             "USER_nickname, USER_regdate, USER_icon, USER_alipay_account, USER_credit, " +
             "USER_reserved_field_01, USER_reserved_field_02, USER_reserved_field_03, " +
@@ -86,7 +86,7 @@ public class JdbcUserRepository implements UserRepository {
     @Override
     public IgdUser update(IgdUser user) {
         return jdbcTemplate.update(UPDATE_USER, user.getUser_pwd(), user.getUser_sex(), user.getUser_nickname()
-                , user.getUser_regdate(), user.getUser_icon(), user.getUser_alipay_account(), user.getUser_credit()
+                , user.getUser_icon(), user.getUser_alipay_account(), user.getUser_credit()
                 , user.getUser_phone()) > 0 ? user : new IgdUser();
     }
 

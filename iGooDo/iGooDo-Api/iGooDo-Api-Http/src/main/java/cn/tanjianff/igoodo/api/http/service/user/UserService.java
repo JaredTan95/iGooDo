@@ -1,6 +1,8 @@
 package cn.tanjianff.igoodo.api.http.service.user;
 
 import cn.tanjianff.igoodo.api.http.MyRespMsgEntity;
+import cn.tanjianff.igoodo.common.db.domain.IgdUser;
+import cn.tanjianff.igoodo.common.db.domain.IgdUserInformation;
 
 /**
  * Created by tanjian on 2017/7/6.
@@ -39,6 +41,7 @@ public interface UserService {
      * @return the my resp msg entity
      */
     MyRespMsgEntity userRegiterOrLogin2(String phoneNum);
+
     /**
      * Gets ext info.
      *
@@ -46,4 +49,22 @@ public interface UserService {
      * @return the ext info
      */
     MyRespMsgEntity getExtInfo(String phonNum);
+
+
+    /**
+     * 更新我的个人基础信息
+     *
+     * @param user the user
+     * @return the my resp msg entity
+     */
+    MyRespMsgEntity updateMyBaseInfo(IgdUser user);
+
+
+    /**
+     * 更新我的个人扩展信息
+     *
+     * @param user the user
+     * @return the my resp msg entity
+     */
+    MyRespMsgEntity updateMyExtInfo(IgdUserInformation userInfo);
 }

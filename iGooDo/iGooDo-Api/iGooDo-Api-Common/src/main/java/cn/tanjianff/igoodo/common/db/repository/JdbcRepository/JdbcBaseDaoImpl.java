@@ -1,6 +1,8 @@
 package cn.tanjianff.igoodo.common.db.repository.JdbcRepository;
 
 import cn.tanjianff.igoodo.common.db.repository.JdbcBaseDao;
+import cn.tanjianff.igoodo.common.util.GenericsUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -14,25 +16,26 @@ import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
 @Component
+@SuppressWarnings("unchecked")
 public class JdbcBaseDaoImpl<T> implements JdbcBaseDao<T> {
     public static final String SQL_INSERT = "insert";
     public static final String SQL_UPDATE = "update";
     public static final String SQL_DELETE = "delete";
     private JdbcTemplate jdbcTemplate;
+    private Class<T> entityClass;
 
-   // @Autowired
+    @Autowired
     public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    private Class<T> entityClass;
-
-    @SuppressWarnings("unchecked")
     public JdbcBaseDaoImpl() {
-      /*  ParameterizedType type = (ParameterizedType) getClass().getGenericSuperclass();
-        entityClass = (Class<T>) type.getActualTypeArguments()[0];
-        System.out.println("Dao实现类是：" + entityClass.getName());*/
+      /*  ParameterizedType genericSuperclass = (ParameterizedType) getClass().getGenericSuperclass();
+        this.entityClass = (Class<T>) genericSuperclass.getActualTypeArguments()[0];*/
+        Class<T> entityClass = GenericsUtils.getSuperClassGenricType(this.getClass(), 0);
+        System.out.println("Dao实现类是：" + entityClass.getName());
     }
 
     @Override
