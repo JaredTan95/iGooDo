@@ -5,6 +5,8 @@ import cn.tanjianff.igoodo.api.http.service.plugin.PluginsService;
 import cn.tanjianff.igoodo.api.http.service.user.UserService;
 import cn.tanjianff.igoodo.common.db.domain.IgdUser;
 import cn.tanjianff.igoodo.common.db.domain.IgdUserInformation;
+import cn.tanjianff.igoodo.common.db.domain.Igd_personnal_cost_records;
+import cn.tanjianff.igoodo.common.db.repository.JdbcPersonalCostRecord;
 import cn.tanjianff.igoodo.common.db.repository.JdbcRepository.JdbcUserInfoRepository;
 import cn.tanjianff.igoodo.common.db.repository.JdbcRepository.JdbcUserRepository;
 import cn.tanjianff.igoodo.common.util.RegexUtils;
@@ -26,6 +28,7 @@ import java.sql.Timestamp;
 public class UserServiceImpl implements UserService {
     private JdbcUserRepository jdbcUserRepository;
     private JdbcUserInfoRepository jdbcUserInfoRepository;
+    private JdbcPersonalCostRecord jdbcPersonalCostRecord;
 
     private PluginsService pluginsService;
     private static Log log = LogFactory.getLog(UserServiceImpl.class);
@@ -43,6 +46,11 @@ public class UserServiceImpl implements UserService {
     @Autowired
     public void setJdbcUserInfoRepository(JdbcUserInfoRepository jdbcUserInfoRepository) {
         this.jdbcUserInfoRepository = jdbcUserInfoRepository;
+    }
+
+    @Autowired
+    public void setJdbcPersonalCostRecord(JdbcPersonalCostRecord jdbcPersonalCostRecord) {
+        this.jdbcPersonalCostRecord = jdbcPersonalCostRecord;
     }
 
     @Override
@@ -84,7 +92,7 @@ public class UserServiceImpl implements UserService {
                     user.setUser_credit(100L);
                     user.setUpdate_time(new Timestamp(System.currentTimeMillis()));
                     IgdUserInformation userInformation = new IgdUserInformation();
-                    userInformation.setUserPhone(Double.parseDouble(phoneNum));
+                    userInformation.setUserPhone(phoneNum);
                     userInformation.setUpdateTime(new Timestamp(System.currentTimeMillis()));
                     if (jdbcUserRepository.save(user) && jdbcUserInfoRepository.save(userInformation)) {
                         return MyRespMsgEntity.getSuccessMsg().put("user", user);
@@ -115,7 +123,7 @@ public class UserServiceImpl implements UserService {
                     user.setUser_credit(100L);
                     user.setUpdate_time(new Timestamp(System.currentTimeMillis()));
                     IgdUserInformation userInformation = new IgdUserInformation();
-                    userInformation.setUserPhone(Double.parseDouble(phoneNum));
+                    userInformation.setUserPhone(phoneNum);
                     userInformation.setUpdateTime(new Timestamp(System.currentTimeMillis()));
                     if (jdbcUserRepository.save(user) && jdbcUserInfoRepository.save(userInformation)) {
                         return MyRespMsgEntity.getSuccessMsg().put("user", user).put("getSmsMsg", pluginsService.getSmsCode(phoneNum));
@@ -167,5 +175,22 @@ public class UserServiceImpl implements UserService {
             log.info("updateMyExtInfo:" + e.getMessage());
             return MyRespMsgEntity.getFailedMsg().put("msg", "使用的人太多了,待会儿再试试哦~");
         }
+    }
+
+    @Override
+    public MyRespMsgEntity saveMyCost(Igd_personnal_cost_records records) {
+        try {
+            return jdbcPersonalCostRecord.save(records)?MyRespMsgEntity.getSuccessMsg().put("msg","结算成功了哦～")
+                    :MyRespMsgEntity.getSuccessMsg().put("msg","结算失败了～");
+        }catch (Exception e){
+            log.info("个人结算业务异常--->saveMyCost:" + e.getMessage());
+            return MyRespMsgEntity.getFailedMsg().put("msg", "使用的人太多了,待会儿再试试哦~");
+        }
+
+    }
+
+    @Override
+    public MyRespMsgEntity checkMyCost() {
+        return null;
     }
 }

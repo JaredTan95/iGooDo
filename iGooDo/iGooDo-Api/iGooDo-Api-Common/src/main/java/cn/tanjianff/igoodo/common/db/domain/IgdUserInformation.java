@@ -1,13 +1,12 @@
 package cn.tanjianff.igoodo.common.db.domain;
 
 
-import java.sql.Date;
 import java.sql.Timestamp;
 
 public class IgdUserInformation {
 
-    private double userPhone;
-    private Date infBirthday;
+    private String userPhone;
+    private String infBirthday;
     private long infWeightKg;
     private long infHeightCm;
     private String infReservedField01;
@@ -23,7 +22,7 @@ public class IgdUserInformation {
     public IgdUserInformation() {
     }
 
-    public IgdUserInformation(double userPhone, Date infBirthday, long infWeightKg, long infHeightCm,
+    public IgdUserInformation(String userPhone, String infBirthday, long infWeightKg, long infHeightCm,
                               String infReservedField01, String infReservedField02, String infReservedField03,
                               String infReservedField04, String infReservedField05, String infReservedField06,
                               String infReservedField07, String infReservedField08, Timestamp infUpdateTime) {
@@ -42,20 +41,20 @@ public class IgdUserInformation {
         this.updateTime = infUpdateTime;
     }
 
-    public double getUserPhone() {
+    public String getUserPhone() {
         return userPhone;
     }
 
-    public void setUserPhone(double userPhone) {
+    public void setUserPhone(String userPhone) {
         this.userPhone = userPhone;
     }
 
 
-    public Date getInfBirthday() {
+    public String getInfBirthday() {
         return infBirthday;
     }
 
-    public void setInfBirthday(Date infBirthday) {
+    public void setInfBirthday(String infBirthday) {
         this.infBirthday = infBirthday;
     }
 

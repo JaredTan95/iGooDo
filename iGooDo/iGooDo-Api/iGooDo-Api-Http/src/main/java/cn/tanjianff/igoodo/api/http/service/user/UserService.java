@@ -3,6 +3,7 @@ package cn.tanjianff.igoodo.api.http.service.user;
 import cn.tanjianff.igoodo.api.http.MyRespMsgEntity;
 import cn.tanjianff.igoodo.common.db.domain.IgdUser;
 import cn.tanjianff.igoodo.common.db.domain.IgdUserInformation;
+import cn.tanjianff.igoodo.common.db.domain.Igd_personnal_cost_records;
 
 /**
  * Created by tanjian on 2017/7/6.
@@ -63,8 +64,25 @@ public interface UserService {
     /**
      * 更新我的个人扩展信息
      *
-     * @param user the user
+     * @param userInfo the user info
      * @return the my resp msg entity
      */
     MyRespMsgEntity updateMyExtInfo(IgdUserInformation userInfo);
+
+
+    /**
+     * 保存用户消费记录.
+     *
+     * @param records the records
+     * @return the my resp msg entity
+     */
+    MyRespMsgEntity saveMyCost(Igd_personnal_cost_records records);
+
+
+    /**
+     * 个人饮水结算
+     *
+     * @return the my resp msg entity
+     */
+    MyRespMsgEntity checkMyCost();
 }

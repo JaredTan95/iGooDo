@@ -23,11 +23,7 @@ public class JdbcUserInfoRepository implements UserInfoRepository {
             "INF_reserved_field_04,INF_reserved_field_05,INF_reserved_field_06,INF_reserved_field_07," +
             "INF_reserved_field_08,update_time ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
     private static final String DELETE="DELETE FROM IGD_USER_INFORMATION WHERE USER_phone=?";
-    private static final String UPDATE="UPDATE IGD_USER_INFORMATION " +
-            "SET INF_birthday=?,INF_weight_kg=?,INF_height_cm=?,INF_reserved_field_01=?" +
-            ",INF_reserved_field_02=?,INF_reserved_field_03=?,INF_reserved_field_04=?" +
-            ",INF_reserved_field_05=?,INF_reserved_field_06=?,INF_reserved_field_07=?" +
-            ",INF_reserved_field_08=?,update_time=?";
+    private static final String UPDATE="UPDATE IGD_USER_INFORMATION SET INF_birthday=?,INF_weight_kg=?,INF_height_cm=? WHERE USER_phone=?";
 
     public JdbcUserInfoRepository(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
@@ -50,11 +46,9 @@ public class JdbcUserInfoRepository implements UserInfoRepository {
 
     @Override
     public IgdUserInformation update(IgdUserInformation info) {
-        return jdbcTemplate.update(UPDATE,info.getInfBirthday(),info.getInfWeightKg()
-        ,info.getInfHeightCm(),info.getInfReservedField01(),info.getInfReservedField02()
-        ,info.getInfReservedField03(),info.getInfReservedField04(),info.getInfReservedField05()
-        ,info.getInfReservedField06(),info.getInfReservedField07(),info.getInfReservedField08()
-        ,info.getUpdateTime())>0?info:new IgdUserInformation();
+        //TODO:更新未成功
+        return jdbcTemplate.update(UPDATE, info.getInfBirthday(),info.getInfWeightKg()
+        ,info.getInfHeightCm(),info.getUserPhone())>0?info:new IgdUserInformation();
     }
 
     @Override
@@ -65,8 +59,8 @@ public class JdbcUserInfoRepository implements UserInfoRepository {
     private static final class UserInfoRowMapper implements RowMapper<IgdUserInformation> {
         @Override
         public IgdUserInformation mapRow(ResultSet resultSet, int i) throws SQLException {
-            return new IgdUserInformation(resultSet.getDouble("USER_phone")
-                    ,resultSet.getDate("INF_birthday"),
+            return new IgdUserInformation(resultSet.getString("USER_phone")
+                    ,resultSet.getString("INF_birthday"),
                     resultSet.getLong("INF_weight_kg")
                     ,resultSet.getLong("INF_height_cm"),
                     resultSet.getString("INF_reserved_field_01")
